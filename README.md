@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Hi my name is Amedeo. I'm excited about this project because I will learn how to use multiple web technologies.
 	
 ## Technologies
 Technologies used for this project:
