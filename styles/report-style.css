@@ -1,33 +1,98 @@
-
 #form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1em;
 }
 
 #emergency-report-form {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+}
+
+#report-emergency-heading {
+  padding-bottom: 1em;
+}
+
+#emergency-description-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3em;
+}
+
+#file-upload-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3em;
+}
+
+
+#radio-buttons-inner-container {
+  display: flex;
+  justify-content: start;
+  padding-bottom: 3em;
+}
+
+#low-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: start;
+  padding-right: 2em;
+}
+
+#medium-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: start;
+  padding-right: 2em;
+}
+
+#high-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: start;
+}
+
+#send-location-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2em;
+}
+
+#send-location-label {
+  padding-left: .5em;
+}
+
+#submit-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 label {
-  padding-top: 2em;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.radio-button {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.checkbox {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.form-control-heading {
   padding-bottom: 1em;
   font-size: 14pt;
   font-weight: 500;
 }
 
-#location-checkbox {
-  width: 2em;
-  height: 2em;
-}
-
-#submit-button {
-  margin-top: 2em;
-}
-
-#checkbox-message {
-  padding-top: .5em;
+p {
+  padding: 0;
+  margin: 0;
 }

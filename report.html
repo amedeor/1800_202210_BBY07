@@ -46,16 +46,50 @@
 
   <!-- Report an Emergency -->
   <div id="form-container" class="container">
-    <h1>Report Emergency</h1>
-    <form id="emergency-report-form" class="container" action="" method="post">
-      <label for="emergency-description">Description of emergency:</label>
-      <textarea name="emergency-description" id="emergency-description" rows="5" cols="30"></textarea>
-      <label for="file-upload">Attach photos/videos:</label>
-      <input type="file" name="file-upload" id="file-upload" />
-      <label for="location">Send my location to Security:</label>
-      <input type="checkbox" name="location" id="location-checkbox" />
-      <p id="checkbox-message">(If checked, location will be sent to Security)</p>
-      <input id="submit-button" type="submit" value="Submit">
+    <h1 id="report-emergency-heading">Report Emergency</h1>
+    <form id="emergency-report-form" action="" method="post">
+
+      <div id="emergency-description-container">
+        <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
+        <textarea name="emergency-description" id="emergency-description" rows="5" cols="50"></textarea>
+      </div>
+      
+      <div id="file-upload-container">
+        <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
+        <input type="file" name="file-upload" id="file-upload" />
+      </div>
+      
+
+      <div id="radio-buttons-container">
+        <p class="form-control-heading">Severity of the emergency:</p>
+
+        <div id="radio-buttons-inner-container">
+          <div id="low-button-container">
+            <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="Low">
+            <label for="low" id="low-label">Low</label>
+          </div>
+          
+          <div id="medium-button-container">
+            <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="Medium">
+            <label for="low" id="medium-label">Medium</label>
+          </div>
+          
+          <div id="high-button-container">
+            <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="High">
+            <label for="low" id="high-label">High</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="send-location-container">
+        <input type="checkbox" name="location" id="location-checkbox" class="checkbox" />
+        <label id="send-location-label" for="location" class="form-control-heading">Send my location to Security</label>
+      </div>
+      
+      <div id="submit-button-container">
+        <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
+      </div>
+      
     </form>
   </div>
 
