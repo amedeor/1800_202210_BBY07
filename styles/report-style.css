@@ -1,0 +1,33 @@
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1em;
+}
+
+#emergency-report-form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+label {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+#location-checkbox {
+  width: 2em;
+  height: 2em;
+}
+
+#submit-button {
+  margin-top: 2em;
+}
+
+#checkbox-message {
+  padding-top: .5em;
+}

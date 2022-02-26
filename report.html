@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BBY Team 07 App</title>
+  <meta charset="utf-8">
+
+  <!-- Bootstrap Library CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!--CSS Stylesheets-->
+  <link rel="stylesheet" href="./styles/report-style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./images/alert-app-icon.svg" height="36" alt="Alert icon">
+        iAssist</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- me-auto to align links at beginning of navbar ms-auto to align at end-->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Security Booth Location</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Report History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Report an Emergency -->
+  <div id="form-container" class="container">
+    <h1>Report Emergency</h1>
+    <form id="emergency-report-form" class="container" action="" method="post">
+      <label for="emergency-description">Description of emergency:</label>
+      <textarea name="emergency-description" id="emergency-description" rows="5" cols="30"></textarea>
+      <label for="file-upload">Attach photos/videos:</label>
+      <input type="file" name="file-upload" id="file-upload" />
+      <label for="location">Send my location to Security:</label>
+      <input type="checkbox" name="location" id="location-checkbox" />
+      <p id="checkbox-message">(If checked, location will be sent to Security)</p>
+      <input id="submit-button" type="submit" value="Submit">
+    </form>
+  </div>
+
+
+  <!-- Footer -->
+  <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
+  <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-light justify-content-center py-3">
+    <div class="container justify-content-center">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">About</a>
+        <a class="nav-link" href="#">FAQ</a>
+        <a class="nav-link" href="#">Help</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Boostrap Library JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
