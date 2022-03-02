@@ -2,76 +2,90 @@
 <html lang="en">
 
 <head>
-    <title>BBY Team 07 App</title>
-    <meta charset="utf-8">
+  <title>BBY Team 07 App</title>
+  <meta charset="utf-8">
 
-    <!-- Bootstrap Library CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Bootstrap Library CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Firebase 8 Library related CSS, JS, JQuery -->
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./images/alert-app-icon.svg" height="36" alt="Alert icon">
-                iAssist</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- me-auto to align links at beginning of navbar ms-auto to align at end-->
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Security Booth Location</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Welcome -->
-    <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="./images/alert-app-icon.svg" alt="" width="72" height="57">
-        <h1 class="display-5 fw-bold">iAssist</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Here to make events safer.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-secondary btn-lg px-4 gap-3">Report Emergency</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact Security</button>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./images/alert-app-icon.svg" height="36" alt="Alert icon">
+        iAssist</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- me-auto to align links at beginning of navbar ms-auto to align at end-->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="logged-out nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-out nav-link" href="boothlocations.html">Security Booth Locations</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-out nav-link" href="login.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-in nav-link" href="report.html">Create report</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-in nav-link" href="reporthistory.html">Report history</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-in nav-link" href="account.html">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-out nav-link" href="login.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a id="signout" class="logged-in nav-link" href="#">Sign out</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
-    <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-light justify-content-center py-3">
-        <div class="container justify-content-center">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                <a class="nav-link" href="questions.html">FAQ</a>
-                <a class="nav-link" href="help.html">Help</a>
-            </div>
-        </div>
-    </footer>
+  <h1>Questions</h1>
+
+  <!-- Footer -->
+  <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
+  <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-light justify-content-center py-3">
+    <div class="container justify-content-center">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="about.html">About</a>
+        <a class="nav-link" href="questions.html">FAQ</a>
+        <a class="nav-link" href="help.html">Help</a>
+      </div>
+    </div>
+  </footer>
 
 
-    <!-- Boostrap Library JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+  <!-- Boostrap Library JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+    <!-- JavaScript Functions -->
+    <script src="./scripts/firebaseAPI.js"></script>
+    <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/rendernavbarlinks.js"></script>
 </body>
 
 </html>

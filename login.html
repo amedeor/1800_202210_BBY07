@@ -34,10 +34,29 @@
         <!-- me-auto to align links at beginning of navbar ms-auto to align at end-->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            <a class="logged-out nav-link" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Security Booth Location</a>
+            <a class="logged-out nav-link" href="boothlocations.html">Security Booth Locations</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-out nav-link" href="login.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-in nav-link" href="report.html">Create report</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-in nav-link" href="reporthistory.html">Report history</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-in nav-link" href="account.html">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="logged-out nav-link" href="login.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a id="signout" class="logged-in nav-link" href="#">Sign out</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -72,6 +91,7 @@
   <!-- JavaScript Functions -->
   <script src="./scripts/firebaseAPI.js"></script>
   <script src="./scripts/authentication.js"></script>
+  <script src="./scripts/rendernavbarlinks.js"></script>
 </body>
 
 </html>

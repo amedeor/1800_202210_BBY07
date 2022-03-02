@@ -9,10 +9,11 @@ function insertName() {
           //get the document for current user.
           currentUser.get()
           .then(userDoc => {
-             var user_Name = userDoc.data().name;
-             console.log(user_Name);
+            console.log(userDoc);
+             let userName = userDoc.data().name;
+             console.log(userName);
              //method #1:  insert with html only
-             document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
+             document.querySelector("#name-goes-here").innerText = userName;    //using javascript
              //method #2:  insert using jquery
              //$("#name-goes-here").text(user_Name);                         //using jquery
           })
