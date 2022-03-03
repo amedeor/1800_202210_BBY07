@@ -70,10 +70,10 @@ signout.addEventListener("click", e => {
   e.preventDefault();
   //signoutOut is an asynchronous function
   auth.signOut().then(() => {
-    console.log("User has been logged out successfully."); //will only display in console if window.location.assign("logout.html"); is not used
+    console.log("User has been sign out out successfully."); //will only display in console if window.location.assign("signout.html"); is not used
     window.location.assign("signout.html");  
   }).catch( () => {
-    console.log("Error, could not logout user.");
+    console.log("Error, could not sign out user.");
   });
 });
 
