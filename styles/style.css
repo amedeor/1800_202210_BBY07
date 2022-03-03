@@ -1,0 +1,24 @@
+.none-display {
+  display: none;
+}
+
+.block-display {
+  display: block;
+}
+
+.hide-link {
+  display: none;
+}
+
+.phone-number-link {
+  text-decoration: none;
+  color: #6c757d;
+}
+
+.phone-number-link:hover {
+  color: #fff;
+}
+
+#contact-security-button:hover {
+  color: #fff;
+}

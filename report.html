@@ -11,15 +11,16 @@
 
   <!--CSS Stylesheets-->
   <link rel="stylesheet" href="./styles/report-style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
   <!-- Firebase 8 Library related CSS, JS, JQuery -->
-<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 </head>
 
 <body>
@@ -37,28 +38,28 @@
         <!-- me-auto to align links at beginning of navbar ms-auto to align at end-->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="logged-out nav-link" aria-current="page" href="index.html">Home</a>
+            <a class="logged-in-logged-out nav-link hide-link" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="logged-out nav-link" href="boothlocations.html">Security Booth Locations</a>
+            <a class="logged-in-logged-out nav-link hide-link" href="boothlocations.html">Security Booth Locations</a>
           </li>
           <li class="nav-item">
-            <a class="logged-out nav-link" href="login.html">Sign In</a>
+            <a class="logged-out nav-link hide-link" href="login.html">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link" href="report.html">Create report</a>
+            <a class="logged-in nav-link hide-link" href="report.html">Create report</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link" href="reporthistory.html">Report history</a>
+            <a class="logged-in nav-link hide-link" href="reporthistory.html">Report history</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link" href="account.html">Account</a>
+            <a class="logged-in nav-link hide-link" href="account.html">Account</a>
           </li>
           <li class="nav-item">
-            <a class="logged-out nav-link" href="login.html">Sign Up</a>
+            <a class="logged-out nav-link hide-link" href="login.html">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a id="signout" class="logged-in nav-link" href="#">Sign out</a>
+            <a id="signout" class="logged-in nav-link hide-link" href="#">Sign out</a>
           </li>
         </ul>
       </div>
@@ -74,12 +75,12 @@
         <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
         <textarea name="emergency-description" id="emergency-description" rows="5" cols="50" required></textarea>
       </div>
-      
+
       <div id="file-upload-container">
         <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
         <input type="file" name="file-upload" id="file-upload" />
       </div>
-      
+
 
       <div id="radio-buttons-container">
         <p class="form-control-heading">Severity of the emergency:</p>
@@ -89,12 +90,12 @@
             <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="Low" required>
             <label for="low" id="low-label">Low</label>
           </div>
-          
+
           <div id="medium-button-container">
             <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="Medium">
             <label for="low" id="medium-label">Medium</label>
           </div>
-          
+
           <div id="high-button-container">
             <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="High">
             <label for="low" id="high-label">High</label>
@@ -106,11 +107,11 @@
         <input type="checkbox" name="location" id="location-checkbox" class="checkbox" />
         <label id="send-location-label" for="location" class="form-control-heading">Send my location to Security</label>
       </div>
-      
+
       <div id="submit-button-container">
         <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
       </div>
-      
+
     </form>
   </div>
 
@@ -133,10 +134,10 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
-    <!-- JavaScript Functions -->
-    <script src="./scripts/firebaseAPI.js"></script>
-    <script src="./scripts/authentication.js"></script>
-    <script src="./scripts/rendernavbarlinks.js"></script>
+  <!-- JavaScript Functions -->
+  <script src="./scripts/firebaseAPI.js"></script>
+  <script src="./scripts/authentication.js"></script>
+  <script src="./scripts/rendernavbarlinks.js"></script>
 </body>
 
 </html>

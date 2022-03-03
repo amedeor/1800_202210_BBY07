@@ -58,6 +58,7 @@ var uiConfig = {
   // first check if the #firebaseui-auth-container element is on the page
   const firebaseuiAuthContainer = document.querySelector("#firebaseui-auth-container");
 
+  //render the firebase authentication widget if the container to hold it exists
   if (firebaseuiAuthContainer !== null) {
     ui.start('#firebaseui-auth-container', uiConfig);
   };

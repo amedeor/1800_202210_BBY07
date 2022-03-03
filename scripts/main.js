@@ -22,4 +22,13 @@ function insertName() {
       }
   });
 }
+
+auth.onAuthStateChanged(user => {
+  if (user) {
+    window.location.assign("report.html");
+  } else {
+    window.location.assign("login.html"); 
+  }
+});
+
 insertName();
