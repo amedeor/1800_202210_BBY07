@@ -8,3 +8,4 @@ auth.onAuthStateChanged(user => {
     //do nothing 
   }
 });
+
