@@ -26,13 +26,8 @@ function insertName() {
 insertName();
 
 auth.onAuthStateChanged(user => {
-  //need to check that the user is not on the main.html page or it will repeatedly try to redirect to main.html if user is logged in
-  if (user && window.location.pathname !== "/main.html") {
-    window.location.assign("main.html");
-  } else if (user === null) {
-    window.location.assign("login.html"); 
-  } else {
-    //do nothing 
+  if (!user) {
+    window.location = 'login.html'
   }
 });
 

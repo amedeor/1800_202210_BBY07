@@ -4,10 +4,10 @@ let contactSecurityButton = document.querySelector("#call-security-button");
 reportEmergencyButton.addEventListener("click", e => {
   //if the user is logged in, redirect to the report.html page, else, redirect to login page
   auth.onAuthStateChanged(user => {
-    if (user) {
-      window.location.assign("report.html");
+    if (!user) {
+      window.location.assign("login.html");
     } else {
-      window.location.assign("login.html"); 
+      window.location.assign("report.html"); 
     }
   });
   
