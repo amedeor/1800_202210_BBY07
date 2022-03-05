@@ -1,48 +1,16 @@
-## My Web Application (Add your Title here)
+## iAssist - Helping Make Events Safer
 
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Contents](#content)
 
 ## General Info
-This browser based web application to ...
-* Hi my name is Izabelle, I am excited about this project because I like how we are hands on in what it is like to work with a team and create a web application
-* Hi my name is Amedeo. I'm excited about this project because I will learn how to use multiple web technologies.
-* Hi my name is Patrick. I'm excited about this project because I will learn how to create something useful.
+Our team BBY07 is developing a web application to enhance the safety of everyone involved with the Olympics by providing a simple method to report suspicious activities and emergencies to security personnel.
 
-	
 ## Technologies
 Technologies used for this project:
-* HTML, CSS
+* HTML
+* CSS
 * JavaScript
 * Bootstrap 
-* ...
-	
-## Content
-Content of the project folder:
-
-```
- Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
-
-It has the following subfolders and files:
-├── .git                     # Folder for git repo
-├── images                   # Folder for images
-    /blah.jpg                # 
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
-
-Firebase hosting files: 
-├── .firebaserc...
-
-
-```
-
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
-
+* Firebase
+* Firestore
