@@ -76,4 +76,3 @@ signout.addEventListener("click", e => {
     console.log("Error, could not sign out user.");
   });
 });
-
