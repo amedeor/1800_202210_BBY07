@@ -1,4 +1,4 @@
-## iAlert - Helping make events safer
+## iAssist - Helping Make Events Safer
 
 * [General info](#general-info)
 * [Technologies](#technologies)
