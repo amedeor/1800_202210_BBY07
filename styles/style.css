@@ -22,3 +22,16 @@
 #contact-security-button:hover {
   color: #fff;
 }
+
+#signout {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.display-6 {
+  font-size: 25px;
+}
+
+.questionP {
+  font-size: 18px;
+}
