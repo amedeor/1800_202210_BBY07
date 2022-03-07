@@ -69,7 +69,20 @@
     </div>
   </nav>
 
-  <h1>You have been signed out.</h1>
+  <p id="signout">You have been signed out.</p>
+
+  <!-- Welcome -->
+  <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="./images/alert-app-icon.svg" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold">iAssist</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Here to make events safer.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button id="report-emergency-button" type="button" class="btn btn-secondary btn-lg px-4 gap-3">Report Emergency</button> <!-- clicking this button will redirect to login.html using index.js -->
+        <a href="tel:+555-555-5555"><button id="call-security-button" type="button" class="btn btn-outline-secondary btn-lg px-4">Call Security</button></a>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
