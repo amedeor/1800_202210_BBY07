@@ -31,4 +31,14 @@ auth.onAuthStateChanged(user => {
   }
 });
 
+let reportEmergencyButton = document.querySelector("#report-emergency-button");
 
+reportEmergencyButton.addEventListener("click", e => {
+  window.location = "report.html";
+})
+
+let callSecurityButton = document.querySelector("#call-security-button");
+
+callSecurityButton.addEventListener("click", e => {
+  window.open("tel:555-555-5555", "_self");
+});

@@ -19,6 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
@@ -74,7 +75,7 @@
 
       <div id="emergency-description-container">
         <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
-        <textarea name="emergency-description" id="emergency-description" rows="5" cols="35" required></textarea>
+        <textarea name="description" id="emergency-description" rows="5" cols="35" required></textarea>
       </div>
 
       <div id="phone-number-container">
@@ -84,7 +85,7 @@
 
       <div id="file-upload-container">
         <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
-        <input type="file" name="file-upload" id="file-upload" />
+        <input type="file" name="fileUpload" id="file-upload" multiple="multiple" />
       </div>
 
 
@@ -93,17 +94,17 @@
 
         <div id="radio-buttons-inner-container">
           <div id="low-button-container">
-            <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="Low" required>
+            <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="low" required>
             <label for="low" id="low-label">Low</label>
           </div>
 
           <div id="medium-button-container">
-            <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="Medium">
+            <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="medium">
             <label for="low" id="medium-label">Medium</label>
           </div>
 
           <div id="high-button-container">
-            <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="High">
+            <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="high">
             <label for="low" id="high-label">High</label>
           </div>
         </div>

@@ -1,5 +1,5 @@
 let reportEmergencyButton = document.querySelector("#report-emergency-button");
-let contactSecurityButton = document.querySelector("#call-security-button");
+let callSecurityButton = document.querySelector("#call-security-button");
 
 reportEmergencyButton.addEventListener("click", e => {
   //if the user is logged in, redirect to the report.html page, else, redirect to login page
@@ -13,8 +13,8 @@ reportEmergencyButton.addEventListener("click", e => {
   
 });
 
-// contactSecurityButton.addEventListener("click", e => {
-//   window.open("tel:555-555-5555", "_self");
-// });
+callSecurityButton.addEventListener("click", e => {
+  window.open("tel:555-555-5555", "_self");
+});
 
 
