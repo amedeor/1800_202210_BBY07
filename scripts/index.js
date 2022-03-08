@@ -3,7 +3,7 @@ let callSecurityButton = document.querySelector("#call-security-button");
 
 reportEmergencyButton.addEventListener("click", e => {
   //if the user is logged in, redirect to the report.html page, else, redirect to login page
-  firebase.auth().onAuthStateChanged(user => {
+  auth.onAuthStateChanged(user => {
     if (!user) {
       window.location.assign("login.html");
     } else {

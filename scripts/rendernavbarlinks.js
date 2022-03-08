@@ -46,5 +46,3 @@ function renderNavBarLinks(user) {
     }
   }
 }
-
-export {renderNavBarLinks};

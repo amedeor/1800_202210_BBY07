@@ -25,7 +25,7 @@ function insertName() {
 
 insertName();
 
-firebase.auth().onAuthStateChanged(user => {
+auth.onAuthStateChanged(user => {
   if (!user) {
     window.location = 'login.html'
   }

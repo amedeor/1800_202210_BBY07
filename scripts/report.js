@@ -1,5 +1,5 @@
 //check if the user is logged in, if not, redirect to the login.html page
-firebase.auth().onAuthStateChanged(user => {
+auth.onAuthStateChanged(user => {
   if (!user) {
     window.location = 'login.html'
   }
