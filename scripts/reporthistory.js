@@ -40,6 +40,15 @@ function populateReportHistory() {
             let severityParagraph = document.createElement("p");
             let timestampParagraph = document.createElement("p");
 
+            let latitude;
+            let longitude;
+
+            if (doc.data().locationGeoPoint !== undefined) {
+             latitude = doc.data().locationGeoPoint.latitude;
+             longitude = doc.data().locationGeoPoint.longitude;
+            }
+
+
             //Append elements
             reportsContainerDiv.insertAdjacentElement("beforeend", a);
             reportsContainerDiv.insertAdjacentElement("beforeend", singleReportContainer);
@@ -55,10 +64,14 @@ function populateReportHistory() {
 
             descriptionParagraph.insertAdjacentText("beforeend", doc.data().description);
             fileURLSParagraph.insertAdjacentText("beforeend", doc.data().fileURLs);
-            locationGeoPointParagraph.insertAdjacentText("beforeend", doc.data().locationGeoPoint);
+
+            if (doc.data().locationGeoPoint !== undefined) {
+              locationGeoPointParagraph.insertAdjacentText("beforeend", `latitude: ${latitude} longitude: ${longitude}`);
+            }
+            
             phoneNumberParagraph.insertAdjacentText("beforeend", doc.data().phoneNumber);
             severityParagraph.insertAdjacentText("beforeend", doc.data().severity);
-            timestampParagraph.insertAdjacentText("beforeend", doc.data().timestamp);
+            timestampParagraph.insertAdjacentText("beforeend", doc.data().timestamp.toDate());
 
             console.log(doc.data().description);
             console.log(doc.data().fileURLs);
