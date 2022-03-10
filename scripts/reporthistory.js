@@ -53,14 +53,13 @@ function populateReportHistory() {
             reportHistoryHeading.insertAdjacentElement("afterend", reportsContainerDiv);
             a.insertAdjacentText("afterbegin", `Report ${reportNumber}`);
 
+            singleReportContainer.insertAdjacentElement("beforeend", timestampParagraph);
+            singleReportContainer.insertAdjacentElement("beforeend", descriptionParagraph);
+            singleReportContainer.insertAdjacentElement("beforeend", severityParagraph);
             singleReportContainer.insertAdjacentElement("beforeend", locationGeoPointParagraph);
             singleReportContainer.insertAdjacentElement("beforeend", phoneNumberParagraph);
-            singleReportContainer.insertAdjacentElement("beforeend", severityParagraph);
-            singleReportContainer.insertAdjacentElement("beforeend", timestampParagraph);
-
+            
             timestampParagraph.insertAdjacentText("beforeend", doc.data().timestamp.toDate());
-
-            // locationGeoPointParagraph.insertAdjacentText("beforeend", `Latitude: ${latitude}, Longitude: ${longitude}`);
 
             if (doc.data().locationGeoPoint !== undefined) {
               locationGeoPointParagraph.insertAdjacentText("beforeend", `latitude: ${latitude} longitude: ${longitude}`);
@@ -94,7 +93,6 @@ function populateReportHistory() {
             }
 
             reportNumber++;
-
           })
         });
     }
