@@ -91,3 +91,5 @@ function populateReportHistory() {
 }
 
 populateReportHistory();
+
+console.log("HELLO WORLD!");

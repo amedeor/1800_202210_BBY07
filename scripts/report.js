@@ -131,4 +131,6 @@ emergencyReportForm.addEventListener("submit", e => {
   }).catch(error => {
     console.log(error);
   });
+
+  
 })
