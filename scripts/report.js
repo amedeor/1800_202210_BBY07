@@ -98,10 +98,6 @@ emergencyReportForm.addEventListener("submit", e => {
   //get the reports collection of the current user
   const reports = userDocument.collection("reports");
 
-  //console.log(`Latitude: ${latitude}`);
-  //console.log(`Longitude: ${longitude}`);
-
-
   //If the user doesn't share their location data, then assign the GeoPoint a 
   //latitude of 0 and a longitude of 0
   let userLocation;
@@ -110,6 +106,7 @@ emergencyReportForm.addEventListener("submit", e => {
     userLocation = new firebase.firestore.GeoPoint(0, 0);
   } else {
     userLocation = new firebase.firestore.GeoPoint(latitude, longitude);
+    console.log(userLocation.latitude, userLocation.longitude);
   }
 
   const timestamp = new firebase.firestore.Timestamp.now();
