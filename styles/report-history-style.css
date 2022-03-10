@@ -1,0 +1,13 @@
+/* prevents sticky footer from overlapping content */
+#reports-container-div {
+  padding-bottom: 7em;
+}
+
+#report-history-heading {
+  padding-bottom: 1em;
+}
+
+#report-link {
+  display: block;
+  padding-bottom: 1em;
+}

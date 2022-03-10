@@ -23,10 +23,11 @@
   color: #fff;
 }
 
-#signout {
+/* This rule causes a problem when the hamburger menu is rendered */
+/* #signout {
   text-align: right;
   margin-right: 50px;
-}
+} */
 
 .display-6 {
   font-size: 25px;
