@@ -80,7 +80,7 @@ locationCheckbox.addEventListener("change", e => {
       longitude = pos.coords.longitude;
     });
   }
-})
+});
 
 //save report data
 emergencyReportForm.addEventListener("submit", e => {
@@ -128,4 +128,6 @@ emergencyReportForm.addEventListener("submit", e => {
   }).catch(error => {
     console.log(error);
   });
-})
+});
+
+
