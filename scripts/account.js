@@ -19,22 +19,40 @@ function populateAccountInfo() {
 
           let accountHeading = document.getElementById("heading");
 
-          let pEmail = document.createElement("p");
-          let pName = document.createElement("p");
           let infoContainer = document.createElement("div");
+          let pEmail = document.createElement("p");
+          let pName = document.createElement("p"); 
+          let span1 = document.createElement("span");
+          let span2 = document.createElement("span");
           
           accountHeading.insertAdjacentElement("afterend", infoContainer);
 
           infoContainer.insertAdjacentElement("afterbegin", pEmail);
           infoContainer.insertAdjacentElement("beforeend", pName);
 
+          pName.insertAdjacentElement("afterbegin", span1);
+          pEmail.insertAdjacentElement("afterbegin", span2);
+
+          span1.insertAdjacentText("afterbegin", "Name: ");
+          span2.insertAdjacentText("afterbegin", "Email: ");
+
+          span1.insertAdjacentText("afterend", name);
+          span2.insertAdjacentText("afterend", email);
+          
           infoContainer.setAttribute("class", "container");
-          infoContainer.setAttribute("style", "background: #9e9e9e;");
+          infoContainer.setAttribute("style", "background: #9e9e9e; font-size: 24px; width: fit-content; height: fit-content; align: center;");
 
-          pEmail.insertAdjacentText("beforeend", `Email: ${email}`);
-          pName.insertAdjacentText("beforeend", `Name: ${name}`);
+          span1.setAttribute("style", 
+            "font-weight: bold; color: darkcyan;");
+          span2.setAttribute("style", 
+            "font-weight: bold; color: darkcyan;");
 
-          pEmail.setAttribute("style", "font-size: 24px;");
+          // pEmail.insertAdjacentText("beforeend", `Email: ${email}`);
+          // pName.insertAdjacentText("beforeend", `Name: ${name}`);
+
+          
+
+          // pEmail.setAttribute("style", "font-size: 24px; font-weight: bold;");
           
 
           // reportHistoryHeading.insertAdjacentElement("afterend", reportsContainerDiv);
