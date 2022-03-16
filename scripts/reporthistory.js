@@ -53,12 +53,43 @@ function populateReportHistory() {
             reportHistoryHeading.insertAdjacentElement("afterend", reportsContainerDiv);
             a.insertAdjacentText("afterbegin", `Report ${reportNumber}`);
 
-            singleReportContainer.insertAdjacentElement("beforeend", timestampParagraph);
-            singleReportContainer.insertAdjacentElement("beforeend", descriptionParagraph);
-            singleReportContainer.insertAdjacentElement("beforeend", severityParagraph);
-            singleReportContainer.insertAdjacentElement("beforeend", locationGeoPointParagraph);
-            singleReportContainer.insertAdjacentElement("beforeend", phoneNumberParagraph);
-            
+
+            let timeStampHeading = document.createElement("p");
+            let severityHeading = document.createElement("p");
+            let descriptionHeading = document.createElement("p");
+            let locationGeoPointHeading = document.createElement("p");
+            let phoneNumberHeading = document.createElement("p");
+            let fileURLHeading = document.createElement("p");
+
+
+            singleReportContainer.insertAdjacentElement("beforeend", timeStampHeading);
+            singleReportContainer.insertAdjacentElement("beforeend", severityHeading);
+            singleReportContainer.insertAdjacentElement("beforeend", descriptionHeading);
+            singleReportContainer.insertAdjacentElement("beforeend", locationGeoPointHeading);
+            singleReportContainer.insertAdjacentElement("beforeend", phoneNumberHeading);
+            singleReportContainer.insertAdjacentElement("beforeend", fileURLHeading);
+
+            timeStampHeading.insertAdjacentElement("afterend", timestampParagraph);
+            severityHeading.insertAdjacentElement("afterend", severityParagraph); 
+            descriptionHeading.insertAdjacentElement("afterend", descriptionParagraph);
+            locationGeoPointHeading.insertAdjacentElement("afterend", locationGeoPointParagraph);
+            phoneNumberHeading.insertAdjacentElement("afterend", phoneNumberParagraph);
+
+            timeStampHeading.insertAdjacentText("afterbegin", "Time and date:");
+            severityHeading.insertAdjacentText("afterbegin", "Severity:");
+            descriptionHeading.insertAdjacentText("afterbegin", "Description:");
+            locationGeoPointHeading.insertAdjacentText("afterbegin", "Geolocation:");
+            phoneNumberHeading.insertAdjacentText("afterbegin", "Phone number:");
+            fileURLHeading.insertAdjacentText("afterbegin", "Attached media:");
+
+            timeStampHeading.setAttribute("class", "data-heading");
+            severityHeading.setAttribute("class", "data-heading");
+            descriptionHeading.setAttribute("class", "data-heading");
+            locationGeoPointHeading.setAttribute("class", "data-heading");
+            phoneNumberHeading.setAttribute("class", "data-heading");
+            fileURLHeading.setAttribute("class", "data-heading");
+
+
             timestampParagraph.insertAdjacentText("beforeend", doc.data().timestamp.toDate());
 
             if (doc.data().locationGeoPoint !== undefined) {
@@ -85,9 +116,17 @@ function populateReportHistory() {
               //Iterate through the array of objects
               //and print each file URL
               for (let i = 0; i < numberOfKeys; i++) {
-                let fileURLParagraph = document.createElement("p");
-                fileURLParagraph.insertAdjacentText("beforeend", doc.data().fileURLs[i]);
-                singleReportContainer.insertAdjacentElement("beforeend", fileURLParagraph);
+                let fileURLLink = document.createElement("a");
+                fileURLLink.setAttribute("id", `file-url-${i}`);
+                fileURLLink.insertAdjacentText("beforeend", `File ${i + 1}`);
+                fileURLLink.setAttribute("href",doc.data().fileURLs[i]);
+                fileURLLink.setAttribute("target", "_blank");
+                singleReportContainer.insertAdjacentElement("beforeend", fileURLLink);
+
+                // let fileURLParagraph = document.createElement("p");
+                // fileURLParagraph.setAttribute("id", `file-url-${i}`);
+                // fileURLParagraph.insertAdjacentText("beforeend", doc.data().fileURLs[i]);
+                // singleReportContainer.insertAdjacentElement("beforeend", fileURLParagraph);
 
               }
             }

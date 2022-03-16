@@ -9,5 +9,22 @@
 
 #report-link {
   display: block;
+  font-size: 16pt;
   padding-bottom: 1em;
+}
+
+.data-heading {
+  font-weight: 400;
+  font-size: 14pt;
+  font-weight: bold;
+  padding: 0;
+}
+
+p {
+  padding: 0 0 1em 0;
+  margin: 0;
+}
+
+.card {
+  margin-bottom: 2em;
 }
