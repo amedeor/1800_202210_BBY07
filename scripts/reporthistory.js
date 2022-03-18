@@ -69,7 +69,8 @@ function populateReportHistory() {
             reportsContainerDiv.insertAdjacentElement("beforeend", a);
             reportsContainerDiv.insertAdjacentElement("beforeend", singleReportContainer);
             reportHistoryHeading.insertAdjacentElement("afterend", reportsContainerDiv);
-            a.insertAdjacentText("afterbegin", `Report ${reportNumber}`);
+            //set the display name of the report to the date/time it was created
+            a.insertAdjacentText("afterbegin", `${doc.data().timestamp.toDate()}`);
 
 
             let timeStampHeading = document.createElement("p");
