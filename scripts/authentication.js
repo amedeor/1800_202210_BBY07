@@ -7,6 +7,7 @@ var uiConfig = {
         var user = authResult.user;                            
         if (authResult.additionalUserInfo.isNewUser) {         
             db.collection("users").doc(user.uid).set({         
+                    uid: user.uid, //store the uid of the newly created user as a field in the user's document
                     name: user.displayName,                   
                     email: user.email                          
                 }).then(function () {

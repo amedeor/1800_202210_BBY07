@@ -28,3 +28,10 @@ p {
 .card {
   margin-bottom: 2em;
 }
+
+/* MAP STYLE */
+.map-style { 
+  width: 100%;
+  height: 30em;
+  margin-bottom: 1em;
+}

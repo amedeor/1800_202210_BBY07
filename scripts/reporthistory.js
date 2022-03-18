@@ -4,10 +4,26 @@ auth.onAuthStateChanged(user => {
   }
 });
 
+function createMap(latitude, longitude, mapContainerElementId) {
+  let map = L.map(`${mapContainerElementId}`).setView([latitude, longitude], 13);
+  let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
+  
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoidGVhbTA3IiwiYSI6ImNsMHZ4OHZ2aTA2NmkzZHJwMzMybGJsNWwifQ.Xxv9jHm2g3dsq1H0Dpd9CA'
+  }).addTo(map);
+
+  return map;
+}
+
 function populateReportHistory() {
   auth.onAuthStateChanged(user => {
     if (user) {
-      reportsCollection = db.collection("users").doc(user.uid).collection("reports");
+      let reportsCollection = db.collection("users").doc(user.uid).collection("reports");
 
       let reportNumber = 1;
 
@@ -62,6 +78,13 @@ function populateReportHistory() {
             let fileURLHeading = document.createElement("p");
 
 
+            let mapContainer = document.createElement("div");
+            mapContainer.setAttribute("id", `map${reportNumber}`);
+            //used to set the width of the map so that it is displayed on the HTML page, width value is mandatory for rendering
+            mapContainer.setAttribute("class", "map-style"); 
+
+            console.log(mapContainer.getAttribute("id"));
+
             singleReportContainer.insertAdjacentElement("beforeend", timeStampHeading);
             singleReportContainer.insertAdjacentElement("beforeend", severityHeading);
             singleReportContainer.insertAdjacentElement("beforeend", descriptionHeading);
@@ -70,9 +93,10 @@ function populateReportHistory() {
             singleReportContainer.insertAdjacentElement("beforeend", fileURLHeading);
 
             timeStampHeading.insertAdjacentElement("afterend", timestampParagraph);
-            severityHeading.insertAdjacentElement("afterend", severityParagraph); 
+            severityHeading.insertAdjacentElement("afterend", severityParagraph);
             descriptionHeading.insertAdjacentElement("afterend", descriptionParagraph);
             locationGeoPointHeading.insertAdjacentElement("afterend", locationGeoPointParagraph);
+            locationGeoPointParagraph.insertAdjacentElement("afterend", mapContainer); //add the map container element to the DOM before calling L.map()
             phoneNumberHeading.insertAdjacentElement("afterend", phoneNumberParagraph);
 
             timeStampHeading.insertAdjacentText("afterbegin", "Time and date:");
@@ -89,12 +113,31 @@ function populateReportHistory() {
             phoneNumberHeading.setAttribute("class", "data-heading");
             fileURLHeading.setAttribute("class", "data-heading");
 
-
             timestampParagraph.insertAdjacentText("beforeend", doc.data().timestamp.toDate());
 
+            let map;
+
             if (doc.data().locationGeoPoint !== undefined) {
-              locationGeoPointParagraph.insertAdjacentText("beforeend", `latitude: ${latitude} longitude: ${longitude}`);
+              if (latitude !== 0 && longitude !== 0) {
+                locationGeoPointParagraph.insertAdjacentText("beforeend", `latitude: ${latitude} longitude: ${longitude}`);
+                map = createMap(latitude, longitude, mapContainer.getAttribute("id")); //we need to get the attribute of the id of the element where the map will be inserted into
+              } else {
+                locationGeoPointParagraph.insertAdjacentText("beforeend", "No location data available.");
+              }
+
             }
+
+            //Add an event listener to the Bootstrap collapse event
+            //When the collapse event is fired, invalidate the resize so that the map renders full width in the Bootstrap card
+            singleReportContainer.addEventListener("shown.bs.collapse", e => {
+              if (latitude !== 0 && longitude !== 0) {
+                console.log("invalidateSize called");
+                map.invalidateSize();
+              } else {
+                //remove the mapContainer's map-style class if there is no location data so a large blank map does not get rendered
+                mapContainer.classList.toggle("map-style")
+              }
+            })
 
             severityParagraph.insertAdjacentText("beforeend", doc.data().severity);
 
@@ -119,7 +162,7 @@ function populateReportHistory() {
                 let fileURLLink = document.createElement("a");
                 fileURLLink.setAttribute("id", `file-url-${i}`);
                 fileURLLink.insertAdjacentText("beforeend", `File ${i + 1}`);
-                fileURLLink.setAttribute("href",doc.data().fileURLs[i]);
+                fileURLLink.setAttribute("href", doc.data().fileURLs[i]);
                 fileURLLink.setAttribute("target", "_blank");
                 singleReportContainer.insertAdjacentElement("beforeend", fileURLLink);
 
@@ -140,4 +183,3 @@ function populateReportHistory() {
 
 populateReportHistory();
 
-console.log("HELLO WORLD!");
