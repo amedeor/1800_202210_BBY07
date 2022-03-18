@@ -116,4 +116,9 @@ p {
 
 #uploaded-files-heading {
   padding-top: 1em;
+  padding-bottom: .5em;
+}
+
+#delete-files-button {
+  margin-top: 1em;
 }

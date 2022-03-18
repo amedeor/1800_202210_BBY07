@@ -17,6 +17,12 @@ let uploadedFilesHeading = document.createElement("p");
 uploadedFilesHeading.setAttribute("id", "uploaded-files-heading");
 uploadedFilesHeading.setAttribute("class", "form-control-heading");
 
+let deleteFilesButton = document.createElement("input");
+deleteFilesButton.setAttribute("type", "button");
+deleteFilesButton.setAttribute("value", "Delete all uploaded files");
+deleteFilesButton.setAttribute("id", "delete-files-button")
+deleteFilesButton.setAttribute("class", "btn btn-danger");
+
 let fileURLs = [];
 
 //create unique ID for the storage location
@@ -27,6 +33,7 @@ fileUploadButton.addEventListener("change", e => {
 
   fileUploadContainerElement.insertAdjacentElement("beforeend", filesContainerElement);
 
+  //if there is no heading, insert it
   if (document.body.contains(uploadedFilesHeading) === false) {
     filesContainerElement.insertAdjacentElement("afterbegin", uploadedFilesHeading);
     uploadedFilesHeading.insertAdjacentText("afterbegin", "Uploaded files:");
@@ -42,7 +49,41 @@ fileUploadButton.addEventListener("change", e => {
 
     uploadFileToFirestore();
   }
+
+  if (e.target.files.length > 0) {
+    fileUploadContainerElement.insertAdjacentElement("beforeend", deleteFilesButton);
+  }
 });
+
+deleteFilesButton.addEventListener("click", e => {
+  console.log(fileUploadButton.files);
+  fileUploadButton.value = null;
+  console.log(fileUploadButton.files);
+
+  filesContainerElement.textContent = "";
+  deleteFilesButton.remove();
+  uploadedFilesHeading.remove();
+  uploadedFilesHeading.textContent = "";
+
+  deleteFileUploadFolderInFirestore();
+})
+
+function deleteFileUploadFolderInFirestore() {
+  //create a reference to the unique storage folder for the report
+  let storageReference = firebase.storage().ref(`/users/${auth.currentUser.uid}/${uniqueStorageFolderId}`);
+  
+  //delete the folder containing all uploaded files by deleting each file in the folder
+  //Firebase doesn't not support deleting storage folders directly
+  storageReference.listAll()
+    .then(allItemsInFolder => {
+      allItemsInFolder.items.forEach(file => {
+        file.delete()
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+}
 
 async function uploadFileToFirestore() {
   try {
