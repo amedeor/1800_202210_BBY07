@@ -23,7 +23,9 @@ function createMap(latitude, longitude, mapContainerElementId) {
 function populateReportHistory() {
   auth.onAuthStateChanged(user => {
     if (user) {
-      let reportsCollection = db.collection("users").doc(user.uid).collection("reports");
+      let reportsCollection = db.collection("users").doc(user.uid).collection("reports").orderBy("timestamp", "desc"); //order reports by timestamp, descending (most recent is first)
+
+      
 
       let reportNumber = 1;
 
