@@ -12,6 +12,7 @@
 
   <!--CSS Stylesheets-->
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/account-style.css">
 
   <!-- Firebase 8 Library related CSS, JS, JQuery -->
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
@@ -66,7 +67,21 @@
     </div>
   </nav>
 
-  <h1 id="heading">Account information</h1>
+  <div class="container">
+    <h1 id="heading">Account information</h1>
+    <form>
+      <fieldset class="mb-3" id="account-information-fields" disabled>
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" id="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="text" id="email" class="form-control">
+        </div>
+      </fieldset>
+    </form>
+  </div>
 
   <!-- Footer -->
   <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
