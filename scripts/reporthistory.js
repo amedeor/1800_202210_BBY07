@@ -7,7 +7,7 @@ auth.onAuthStateChanged(user => {
 function createMap(latitude, longitude, mapContainerElementId) {
   let map = L.map(`${mapContainerElementId}`).setView([latitude, longitude], 13);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
-  
+
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -24,8 +24,6 @@ function populateReportHistory() {
   auth.onAuthStateChanged(user => {
     if (user) {
       let reportsCollection = db.collection("users").doc(user.uid).collection("reports").orderBy("timestamp", "desc"); //order reports by timestamp, descending (most recent is first)
-
-      
 
       let reportNumber = 1;
 
@@ -84,7 +82,7 @@ function populateReportHistory() {
             let mapContainer = document.createElement("div");
             mapContainer.setAttribute("id", `map${reportNumber}`);
             //used to set the width of the map so that it is displayed on the HTML page, width value is mandatory for rendering
-            mapContainer.setAttribute("class", "map-style"); 
+            mapContainer.setAttribute("class", "map-style");
 
             console.log(mapContainer.getAttribute("id"));
 
@@ -125,9 +123,8 @@ function populateReportHistory() {
                 locationGeoPointParagraph.insertAdjacentText("beforeend", `latitude: ${latitude} longitude: ${longitude}`);
                 map = createMap(latitude, longitude, mapContainer.getAttribute("id")); //we need to get the attribute of the id of the element where the map will be inserted into
               } else {
-                locationGeoPointParagraph.insertAdjacentText("beforeend", "No location data available.");
+                locationGeoPointParagraph.insertAdjacentText("beforeend", "No location data available");
               }
-
             }
 
             //Add an event listener to the Bootstrap collapse event
@@ -151,7 +148,7 @@ function populateReportHistory() {
             //check if any pictures were uploaded
             //if no pictures were uploaded, doc.data().fileURLs is undefined because
             //no array was created for the report in the reports collection
-            if (doc.data().fileURLs !== undefined) {
+            if (doc.data().fileURLs.length > 0) {
 
               //get the keys for each key-value pair in the fileURLs
               let keys = Object.keys(doc.data().fileURLs);
@@ -175,6 +172,11 @@ function populateReportHistory() {
                 // singleReportContainer.insertAdjacentElement("beforeend", fileURLParagraph);
 
               }
+            } else if (doc.data().fileURLs.length === 0) {
+              let fileURLParagraph = document.createElement("p");
+              fileURLParagraph.insertAdjacentText("beforeend", "No media attached");
+              fileURLParagraph.setAttribute("class", "no-padding");
+              fileURLHeading.insertAdjacentElement("afterend", fileURLParagraph);
             }
 
             reportNumber++;
