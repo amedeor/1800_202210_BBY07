@@ -69,23 +69,26 @@
   </nav>
 
   <!-- Report an Emergency -->
+    
+  <div class="container">
+    <div class=" my-5 text-center">
+      <h1 id="report-emergency-heading" class="display-5">Report Emergency</h1>
+      <p></p>
+      <form id="emergency-report-form" class="container">
 
-    <h1 id="report-emergency-heading">Report Emergency</h1>
-    <form id="emergency-report-form" class="container">
+       <div id="emergency-description-container">
+          <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
+          <textarea name="description" id="emergency-description" rows="5" cols="35" required></textarea>
+        </div>
 
-      <div id="emergency-description-container">
-        <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
-        <textarea name="description" id="emergency-description" rows="5" cols="35" required></textarea>
-      </div>
+        <div id="phone-number-container">
+         <label for="phone-number" class="form-control-heading">Phone number:</label>
+         <input type="tel" name="phoneNumber" id="phone-number" pattern="^\d{3}-\d{3}-\d{4}$" title="Required phone number format: xxx-xxx-xxxx" required>
+        </div>
 
-      <div id="phone-number-container">
-        <label for="phone-number" class="form-control-heading">Phone number:</label>
-        <input type="tel" name="phoneNumber" id="phone-number" pattern="^\d{3}-\d{3}-\d{4}$" title="Required phone number format: xxx-xxx-xxxx" required>
-      </div>
-
-      <div id="file-upload-container">
-        <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
-        <input type="file" name="fileUpload" id="file-upload" multiple="multiple" />
+        <div id="file-upload-container">
+          <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
+          <input type="file" name="fileUpload" id="file-upload" multiple="multiple" />
       </div>
 
 
@@ -94,17 +97,17 @@
 
         <div id="radio-buttons-inner-container">
           <div id="low-button-container">
-            <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="low" required>
+            <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="Low" required>
             <label for="low" id="low-label">Low</label>
           </div>
 
           <div id="medium-button-container">
-            <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="medium">
+            <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="Medium">
             <label for="low" id="medium-label">Medium</label>
           </div>
 
           <div id="high-button-container">
-            <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="high">
+            <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="High">
             <label for="low" id="high-label">High</label>
           </div>
         </div>
@@ -120,6 +123,7 @@
       </div>
 
     </form>
+  </div>
 
   <!-- Footer -->
   <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
