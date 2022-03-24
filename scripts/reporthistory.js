@@ -63,12 +63,17 @@ function populateReportHistory() {
               longitude = doc.data().locationGeoPoint.longitude;
             }
 
+            let jsDateObject = doc.data().timestamp.toDate();
+            let formattedDate = jsDateObject.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
+            let formattedTime = jsDateObject.toLocaleTimeString('en-US');
+            let dateAndTime = `${formattedDate} ${formattedTime}`
+
             //Append elements
             reportsContainerDiv.insertAdjacentElement("beforeend", a);
             reportsContainerDiv.insertAdjacentElement("beforeend", singleReportContainer);
             reportHistoryHeading.insertAdjacentElement("afterend", reportsContainerDiv);
             //set the display name of the report to the date/time it was created
-            a.insertAdjacentText("afterbegin", `${doc.data().timestamp.toDate()}`);
+            a.insertAdjacentText("afterbegin", `${dateAndTime}`);
 
 
             let timeStampHeading = document.createElement("p");
@@ -114,7 +119,12 @@ function populateReportHistory() {
             phoneNumberHeading.setAttribute("class", "data-heading");
             fileURLHeading.setAttribute("class", "data-heading");
 
-            timestampParagraph.insertAdjacentText("beforeend", doc.data().timestamp.toDate());
+            
+
+            console.log(jsDateObject);
+            console.log(formattedDate);
+
+            timestampParagraph.insertAdjacentText("beforeend", dateAndTime);
 
             let map;
 
