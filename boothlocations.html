@@ -38,7 +38,7 @@
         <!-- me-auto to align links at beginning of navbar ms-auto to align at end-->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="logged-in-logged-out nav-link hide-link" aria-current="page" href="index.html">Home</a>
+            <a class="logged-in-logged-out nav-link hide-link" aria-current="page" href="index.html" id="main">Home</a>
           </li>
           <li class="nav-item">
             <a class="logged-in-logged-out nav-link hide-link" href="boothlocations.html">Security Booth Locations</a>
@@ -67,8 +67,92 @@
   </nav>
 
   <div class="container">
-    <h1>Security booth locations</h1>
-  </div>
+    <div class="px-4 py-5 my-5 text-center">
+
+      <h1 class="display-5" id="security-booth-heading">Security booth locations</h1>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Cypress">Cypress Mountain</a>
+      <div class="collapse" id="Cypress">
+        <br>
+        <div class="card card-body">
+          Map of Cypress Mountain (provincial park)
+        </div>
+      </div>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#PNE">Pacific National Exhibition</a>
+      <div class="collapse" id="PNE">
+        <br>
+        <div class="card card-body">
+          Map of PNE pacific coliseum
+        </div>
+      </div>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RichmondOval">Richmond Oval</a>
+      <div class="collapse" id="RichmondOval">
+        <br>
+        <div class="card card-body">
+          Map of Richmond Oval
+        </div>
+      </div>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RogersArena">Rogers Arena</a>
+      <div class="collapse" id="RogersArena">
+        <br>
+        <div class="card card-body">
+          Map of Rogers Arena
+        </div>
+      </div>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#UBC">University of British Columbia</a>
+      <div class="collapse" id="UBC">
+        <br>
+        <div class="card card-body">
+          Map of UBC winter sports center 
+        </div>
+      </div>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Vancouver">Vancouver Olympic/Paralympic Centre</a>
+      <div class="collapse" id="Vancouver">
+        <br>
+        <div class="card card-body">
+          Map of Vancouver Olympic/Paralympic Centre
+        </div>
+      </div>
+
+      <br><br>
+
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Whistler">Whistler Mountain</a>
+      <div class="collapse" id="Whistler">
+        <br>
+        <h3 class="display-6">Whistler Creekside</h3>
+        <br>
+        <div class="card card-body">
+          Map of Whistler Mountain (Creekside)
+        </div>
+        <br>
+        <h3 class="display-6">Blackcomb Mountain</h3>
+        <br>
+        <div class="card card-body">
+          Map of Whistler Mountain (Creekside)
+        </div>
+      </div>
+
+    </div>
+  </div>  
+
+
 
   <!-- Footer -->
   <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
