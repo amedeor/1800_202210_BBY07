@@ -42,7 +42,7 @@ function saveUserInfo() {
 
   userInfo.update({
     name: userName,
-    email: userEmail
+    //email: userEmail
   })
   .then(() => {
     console.log("Document successfully updated!");

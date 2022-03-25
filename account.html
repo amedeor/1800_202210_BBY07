@@ -13,6 +13,7 @@
   <!--CSS Stylesheets-->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/account-style.css">
+  <link rel="stylesheet" href="./styles/my_style.css">
 
   <!-- Firebase 8 Library related CSS, JS, JQuery -->
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
@@ -71,23 +72,25 @@
     <div class=" my-5 text-center">
       <h1 class="display-5">Account Information</h1>
       <p></p>
-    <form>
-      <fieldset class="mb-3" id="account-information-fields" disabled>
-        <div class="form-group">
-          <label>Name:</label>
-          <input type="text" id="name" class="form-control">
+      <form>
+        <fieldset class="mb-3" id="account-information-fields" disabled>
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" id="name" class="form-control">
+          </div>
+        </fieldset>
+        <fieldset class="mb-3" id="#" disabled>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="text" id="email" class="form-control">
+          </div>
+        </fieldset>
+        <div class="d-flex justify-content-end mt-5">
+          <button type="button" id="edit" class="btn btn-secondary">Edit</button>
+          <span style="width: 10px"></span>
+          <button type="button" id="save" class="btn-primary btn-lg">Save</button>
         </div>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="text" id="email" class="form-control">
-        </div>
-      </fieldset>
-      <div class="d-flex justify-content-end mt-5">
-        <button type="button" id="edit" class="btn btn-secondary">Edit</button>
-        <span style="width: 10px"></span>
-        <button type="button" id="save" class="btn-primary btn-lg">Save</button>
-    </div>
-    </form>
+      </form>
     </div>
   </div>
 
