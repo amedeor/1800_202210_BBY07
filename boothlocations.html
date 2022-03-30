@@ -11,7 +11,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <!--CSS Stylesheets-->
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/booth-locations-style.css">
 
   <!-- Firebase 8 Library related CSS, JS, JQuery -->
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
@@ -21,6 +21,12 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-- Leaflet Maps CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
 </head>
 
 <body>
@@ -74,83 +80,94 @@
       <br><br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Cypress">Cypress Mountain</a>
-      <div class="collapse" id="Cypress">
+      <div class="collapse  map-container" id="Cypress">
         <br>
         <div class="card card-body">
           Map of Cypress Mountain (provincial park)
+          <div id="cypress" class="map-style"></div>
         </div>
       </div>
 
       <br><br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#PNE">Pacific National Exhibition</a>
-      <div class="collapse" id="PNE">
+      <div class="collapse map-container" id="PNE">
         <br>
         <div class="card card-body">
           Map of PNE Pacific Coliseum
+          <div id="pne" class="map-style"></div>
         </div>
       </div>
 
       <br><br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RichmondOval">Richmond Oval</a>
-      <div class="collapse" id="RichmondOval">
+      <div class="collapse map-container" id="RichmondOval">
         <br>
         <div class="card card-body">
           Map of Richmond Oval
+          <div id="richmond-oval" class="map-style"></div>
         </div>
       </div>
 
       <br><br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RogersArena">Rogers Arena</a>
-      <div class="collapse" id="RogersArena">
+      <div class="collapse map-container" id="RogersArena">
         <br>
         <div class="card card-body">
           Map of Rogers Arena
+          <div id="rogers-arena" class="map-style"></div>
         </div>
       </div>
 
       <br><br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#UBC">University of British Columbia</a>
-      <div class="collapse" id="UBC">
+      <div class="collapse map-container" id="UBC">
         <br>
         <div class="card card-body">
-          Map of UBC winter sports center 
+          Map of UBC Winter Sports Centre
+          <div id="ubc-winter-sports" class="map-style"></div>
         </div>
       </div>
 
       <br><br>
 
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Vancouver">Vancouver Olympic/Paralympic Centre</a>
-      <div class="collapse" id="Vancouver">
+      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Vancouver">Vancouver Olympic/Paralympic
+        Centre</a>
+      <div class="collapse map-container" id="Vancouver">
         <br>
         <div class="card card-body">
           Map of Vancouver Olympic/Paralympic Centre
+          <div id="olympic-paralympic-centre" class="map-style"></div>
         </div>
       </div>
 
       <br><br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Whistler">Whistler Mountain</a>
-      <div class="collapse" id="Whistler">
+      <div class="collapse map-container" id="Whistler">
         <br>
         <h3 class="display-6">Whistler Creekside</h3>
         <br>
         <div class="card card-body">
           Map of Whistler Mountain (Creekside)
+          <div id="creekside" class="map-style"></div>
         </div>
         <br>
         <h3 class="display-6">Blackcomb Mountain</h3>
         <br>
-        <div class="card card-body">
-          Map of Whistler Mountain (Creekside)
+        <div class="card card-body map-container">
+          Map of Whistler Mountain (Blackcomb)
+          <div id="blackcomb" class="map-style"></div>
         </div>
       </div>
 
     </div>
-  </div>  
+  </div>
+
+  <div id="map"></div>
 
 
 
@@ -166,16 +183,23 @@
     </div>
   </footer>
 
-
   <!-- Boostrap Library JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
+  <!-- Leaflet Maps Script -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
   <!-- JavaScript Functions -->
   <script src="./scripts/firebaseAPI.js"></script>
   <script src="./scripts/authentication.js"></script>
   <script src="./scripts/rendernavbarlinks.js"></script>
+  <script src="./scripts/boothlocations.js"></script>
+
+
 </body>
 
 </html>
