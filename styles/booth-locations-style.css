@@ -25,3 +25,117 @@
 #security-booth-heading {
   padding-bottom: 1em;
 }
+
+/* blue #BBDEFB */
+/* dark body #dbe9ee */
+
+.none-display {
+  display: none;
+}
+
+.block-display {
+  display: block;
+}
+
+.hide-link {
+  display: none;
+}
+
+.phone-number-link {
+  text-decoration: none;
+  color: #6c757d;
+}
+
+.phone-number-link:hover {
+  color: #fff;
+}
+
+#contact-security-button:hover {
+  color: #fff;
+}
+
+/* This rule causes a problem when the hamburger menu is rendered */
+/* #signout {
+  text-align: right;
+  margin-right: 50px;
+} */
+
+.display-6 {
+  font-size: 25px;
+}
+
+.display-4 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.questionP {
+  font-size: 18px;
+}
+
+.boothMenu {
+  font-size: 22px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #6f8eb8;
+  border-color: #6f8eb8;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #4a6fa5;
+  border-color: #4a6fa5;
+}
+
+.navbar-light .navbar-brand {
+  font-family: 'Mulish', sans-serif;
+  color: #000;
+}
+
+.bg-primary {
+  background-color: #dbe9ee !important;
+}
+
+.btn-outline-primary {
+  color: #6f8eb8;
+  border-color: #6f8eb8;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #4a6fa5;
+  border-color: #4a6fa5;
+}
+
+.my-5 {
+  margin: auto;
+} 
+
+input[type=file]::file-selector-button {
+  border: 2px solid #6f8eb8;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: #6f8eb8;
+  color: white;
+  cursor: pointer;
+}
+
+.form-control-heading {
+  font-size: 20px;
+}
+
+.severity {
+  font-size: 15px;
+}
+
+.radio-button {
+  margin-left: 2px;
+}
+
+.severity {
+  margin-left: 5px;
+}
+
+a {
+  color: #5fa8d3;
+}
