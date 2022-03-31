@@ -116,3 +116,7 @@ input[type=file]::file-selector-button {
 a {
   color: #5fa8d3;
 }
+
+#logo-link:hover {
+  cursor: pointer;
+}

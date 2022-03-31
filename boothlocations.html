@@ -12,6 +12,7 @@
 
   <!--CSS Stylesheets-->
   <link rel="stylesheet" href="./styles/booth-locations-style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
   <!-- Firebase 8 Library related CSS, JS, JQuery -->
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
@@ -33,7 +34,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <a id="logo-link" class="navbar-brand">
         <img src="./images/alert-app-icon.svg" height="36" alt="Alert icon">
         iAssist</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -73,105 +74,77 @@
   </nav>
 
   <div class="container">
-    <div class="px-4 my-5 text-center">
+    <div id="map-elements-container" class="px-4 my-5 text-center">
 
       <h1 class="display-5" id="security-booth-heading">Security booth locations</h1>
 
-      <br>
       <p>Click on location to view map:</p>
-      <br>
 
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Cypress">Cypress Mountain</a>
       <div class="collapse  map-container" id="Cypress">
-        <br>
         <div class="card card-body">
-          Map of Cypress Mountain (provincial park)
+          <p>Cypress Mountain (provincial park)</p>
           <div id="cypress" class="map-style"></div>
         </div>
       </div>
 
-      <br><br>
-
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#PNE">Pacific National Exhibition</a>
       <div class="collapse map-container" id="PNE">
-        <br>
         <div class="card card-body">
-          Map of PNE Pacific Coliseum
+          <p>PNE Pacific Coliseum</p>
           <div id="pne" class="map-style"></div>
         </div>
       </div>
 
-      <br><br>
-
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RichmondOval">Richmond Oval</a>
       <div class="collapse map-container" id="RichmondOval">
-        <br>
         <div class="card card-body">
-          Map of Richmond Oval
+          <p>Richmond Oval</p>
           <div id="richmond-oval" class="map-style"></div>
         </div>
       </div>
 
-      <br><br>
-
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RogersArena">Rogers Arena</a>
       <div class="collapse map-container" id="RogersArena">
-        <br>
         <div class="card card-body">
-          Map of Rogers Arena
+          <p>Rogers Arena</p>
           <div id="rogers-arena" class="map-style"></div>
         </div>
       </div>
 
-      <br><br>
-
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#UBC">University of British Columbia</a>
       <div class="collapse map-container" id="UBC">
-        <br>
         <div class="card card-body">
-          Map of UBC Winter Sports Centre
+          <p>UBC Winter Sports Centre</p>
           <div id="ubc-winter-sports" class="map-style"></div>
         </div>
       </div>
 
-      <br><br>
-
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Vancouver">Vancouver Olympic/Paralympic
         Centre</a>
       <div class="collapse map-container" id="Vancouver">
-        <br>
         <div class="card card-body">
-          Map of Vancouver Olympic/Paralympic Centre
+          <p>Vancouver Olympic/Paralympic Centre</p>
           <div id="olympic-paralympic-centre" class="map-style"></div>
         </div>
       </div>
 
-      <br><br>
-
       <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Whistler">Whistler Mountain</a>
       <div class="collapse map-container" id="Whistler">
-        <br>
         <h3 class="display-6">Whistler Creekside</h3>
-        <br>
         <div class="card card-body">
-          Map of Whistler Mountain (Creekside)
+          <p>Whistler Mountain (Creekside)</p>
           <div id="creekside" class="map-style"></div>
         </div>
-        <br>
-        <h3 class="display-6">Blackcomb Mountain</h3>
-        <br>
+        <h3 class="display-6 blackcomb-heading">Blackcomb Mountain</h3>
         <div class="card card-body map-container">
-          Map of Whistler Mountain (Blackcomb)
+          <p>Whistler Mountain (Blackcomb)</p>
           <div id="blackcomb" class="map-style"></div>
         </div>
       </div>
 
     </div>
   </div>
-
-  <div id="map"></div>
-
-
 
   <!-- Footer -->
   <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
@@ -201,7 +174,5 @@
   <script src="./scripts/rendernavbarlinks.js"></script>
   <script src="./scripts/boothlocations.js"></script>
 
-
 </body>
-
 </html>

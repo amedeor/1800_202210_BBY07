@@ -95,11 +95,11 @@ async function uploadFileToFirestore() {
 
     //upload the file to firestore
     let uploadTask = await storageReference.put(file);
-    let fileDownloadURL = await uploadTask.ref.getDownloadURL();
+    let fileDownloadURL = await uploadTask.ref.getDownloadURL(); //get the link to the file in storage
 
     console.log(`File URL: ${fileDownloadURL}`);
 
-    fileURLs.push(fileDownloadURL);
+    fileURLs.push(fileDownloadURL); //store the link to the file in an array
 
   } catch (error) {
     console.log(error);
@@ -170,3 +170,18 @@ emergencyReportForm.addEventListener("submit", e => {
     console.log(error);
   });
 });
+
+let logoLink = document.querySelector("#logo-link");
+
+//if a user is not logged in and they click on the navbar logo, direct them to login.html
+//if a user is logged in and they click on the navbar logo, direct them to main.html
+logoLink.addEventListener("click", e => {
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      window.location = "login.html";
+    }
+    else if (user) {
+      window.location = "main.html"
+    }
+  });
+})

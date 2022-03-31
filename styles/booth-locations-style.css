@@ -4,3 +4,24 @@
   height: 30em;
   margin-bottom: 1em;
 }
+
+.map-container {
+  padding-bottom: 2em;
+}
+
+#map-elements-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapse-card {
+  padding-bottom: 1em;
+}
+
+.blackcomb-heading {
+  padding-top: 1em;
+}
+
+#security-booth-heading {
+  padding-bottom: 1em;
+}
