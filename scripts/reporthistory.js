@@ -5,7 +5,7 @@ auth.onAuthStateChanged(user => {
 });
 
 function createMap(latitude, longitude, mapContainerElementId) {
-  let map = L.map(`${mapContainerElementId}`).setView([latitude, longitude], 13);
+  let map = L.map(`${mapContainerElementId}`, {gestureHandling: true}).setView([latitude, longitude], 13);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {

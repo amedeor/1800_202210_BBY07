@@ -29,8 +29,19 @@
 
   <!-- Leaflet Maps CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- Leaflet Gesture Handling CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+
+  <!-- Leafelet Gesture Handling CSS -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.css"
+    type="text/css">
+
+
 </head>
 
 <body class="bg-light">
@@ -80,17 +91,17 @@
     <div class=" my-5 text-center">
       <h1 id="report-history-heading" class="display-5">Report History</h1>
 
-    <!-- Footer -->
-    <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
-    <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-primary justify-content-center py-3">
-      <div class="container justify-content-center">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="about.html">About</a>
-          <a class="nav-link" href="questions.html">FAQ</a>
-          <a class="nav-link" href="help.html">Help</a>
+      <!-- Footer -->
+      <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
+      <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-primary justify-content-center py-3">
+        <div class="container justify-content-center">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+            <a class="nav-link" href="questions.html">FAQ</a>
+            <a class="nav-link" href="help.html">Help</a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </div>
   </div>
 
@@ -105,11 +116,13 @@
   <script src="./scripts/rendernavbarlinks.js"></script>
   <script src="./scripts/reporthistory.js"></script>
 
-<!-- Leaflet Maps Script -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+  <!-- Leaflet Maps Script -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 
+  <!-- Leaflet Gesture Handling JavaScript -->
+  <script src="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.js"></script>
 </body>
 
 </html>
