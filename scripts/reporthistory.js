@@ -26,14 +26,14 @@ function populateReportHistory() {
       let reportsCollection = db.collection("users").doc(user.uid).collection("reports").orderBy("timestamp", "desc"); //order reports by timestamp, descending (most recent is first)
 
       //check if a reports collection exists
-      db.collection("users").doc(user.uid).collection("reports").limit(1).get().then(query => {
-        console.log(query.size);
+      db.collection("users").doc(user.uid).collection("reports").limit(1).get().then(results => {
+        console.log(results.size);
         let reportsMessage = document.createElement("p");
         reportsMessage.setAttribute("id", "reports-message");
         let reportHistoryHeading = document.querySelector("#report-history-heading");
   
-        if (query.size > 0) {
-          reportsMessage.insertAdjacentText("beforeend", "Click on a date to view its corresponding report");
+        if (results.size > 0) {
+          reportsMessage.insertAdjacentText("beforeend", "Click on a date to view a report");
           reportHistoryHeading.insertAdjacentElement("afterend", reportsMessage);
         } else {
           reportsMessage.insertAdjacentText("beforeend", "You do not have any reports yet");
@@ -137,8 +137,6 @@ function populateReportHistory() {
             phoneNumberHeading.setAttribute("class", "data-heading");
             fileURLHeading.setAttribute("class", "data-heading");
 
-
-
             console.log(jsDateObject);
             console.log(formattedDate);
 
@@ -214,27 +212,7 @@ function populateReportHistory() {
   });
 }
 
-function checkIfUserHasReports() {
-  auth.onAuthStateChanged(user => {
-    if (user) {
-      let reportsCollection = db.collection("users").doc(user.uid).collection("reports");
-      let reportsMessage = document.createElement("p");
-      let reportHistoryHeading = document.querySelector("#report-history-heading");
-
-      if (reportsCollection != undefined) {
-        reportsMessage.insertAdjacentText("beforeend", "Click on a date to view its corresponding report");
-        reportHistoryHeading.insertAdjacentElement("afterbegin", reportsMessage);
-      } else {
-        reportsMessage.insertAdjacentText("beforeend", "You do not have any reports yet.");
-        reportHistoryHeading.insertAdjacentElement("afterbegin", reportsMessage);
-      }
-
-    }
-  });
-}
-
 populateReportHistory();
-
 
 let logoLink = document.querySelector("#logo-link");
 
