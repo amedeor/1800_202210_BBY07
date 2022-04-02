@@ -65,3 +65,10 @@ logoLink.addEventListener("click", e => {
     }
   });
 })
+
+function getUserInfo() {
+  console.log(displayName2);
+  console.log(email2);
+  console.log(user2.photoURL);
+  console.log(emailVerified2);
+}
