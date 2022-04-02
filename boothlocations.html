@@ -11,8 +11,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <!--CSS Stylesheets-->
-  <link rel="stylesheet" href="./styles/booth-locations-style.css">
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/booth-locations-style.css">
 
   <!-- Firebase 8 Library related CSS, JS, JQuery -->
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
@@ -23,16 +23,13 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <!-- Leaflet Maps CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin="" />
+  <!-- Leaflet (JS/CSS) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
 
-  <!-- Leaflet Gesture Handling CSS -->
-  <link rel="stylesheet"
-    href="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.css"
-    type="text/css">
-
+  <!-- leaflet-gesture-handling -->
+  <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.css" type="text/css">
+  <script src="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -59,10 +56,10 @@
             <a class="logged-out nav-link hide-link" href="login.html">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link hide-link" href="report.html">Create report</a>
+            <a class="logged-in nav-link hide-link" href="report.html">Report Emergency</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link hide-link" href="reporthistory.html">Report history</a>
+            <a class="logged-in nav-link hide-link" href="reporthistory.html">View Report History</a>
           </li>
           <li class="nav-item">
             <a class="logged-in nav-link hide-link" href="account.html">Account</a>
@@ -81,7 +78,7 @@
   <div class="container">
     <div id="map-elements-container" class="px-4 my-5 text-center">
 
-      <h1 class="display-5" id="security-booth-heading">Security booth locations</h1>
+      <h1 class="display-5" id="security-booth-heading">Security Booth Locations</h1>
 
       <p>Click on location to view map:</p>
 
@@ -168,19 +165,11 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
-  <!-- Leaflet Maps Script -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-
   <!-- JavaScript Functions -->
   <script src="./scripts/firebaseAPI.js"></script>
   <script src="./scripts/authentication.js"></script>
   <script src="./scripts/rendernavbarlinks.js"></script>
   <script src="./scripts/boothlocations.js"></script>
-
-  <!-- Leaflet Gesture Handling JavaScript -->
-  <script src="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.js"></script>
 
 </body>
 

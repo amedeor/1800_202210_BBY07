@@ -67,3 +67,8 @@ body {
 #high-button-container {
   display: flex;
 }
+
+#button-container {
+  display: flex;
+  justify-content: center;
+}

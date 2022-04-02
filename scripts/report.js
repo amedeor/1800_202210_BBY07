@@ -178,7 +178,7 @@ let logoLink = document.querySelector("#logo-link");
 logoLink.addEventListener("click", e => {
   auth.onAuthStateChanged(user => {
     if (!user) {
-      window.location = "login.html";
+      window.location = "index.html";
     }
     else if (user) {
       window.location = "main.html"

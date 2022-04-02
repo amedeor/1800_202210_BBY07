@@ -49,10 +49,10 @@
             <a class="logged-out nav-link hide-link" href="login.html">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link hide-link" href="report.html">Create report</a>
+            <a class="logged-in nav-link hide-link" href="report.html">Report Emergency</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link hide-link" href="reporthistory.html">Report history</a>
+            <a class="logged-in nav-link hide-link" href="reporthistory.html">View Report History</a>
           </li>
           <li class="nav-item">
             <a class="logged-in nav-link hide-link" href="account.html">Account</a>
@@ -120,7 +120,9 @@
         Security</label>
         <input type="checkbox" name="location" id="location-checkbox" class="checkbox" />
     </div>
-    <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
+    <div id="button-container">
+      <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
+    </div>
   </form>
 </div>
 
@@ -206,7 +208,7 @@
     <script src="./scripts/authentication.js"></script>
     <script src="./scripts/rendernavbarlinks.js"></script>
     <script src="./scripts/report.js"></script>
-  </div>
+  <!-- </div> -->
 </body>
 
 </html>
