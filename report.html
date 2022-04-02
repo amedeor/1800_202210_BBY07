@@ -49,10 +49,10 @@
             <a class="logged-out nav-link hide-link" href="login.html">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link hide-link" href="report.html">Create report</a>
+            <a class="logged-in nav-link hide-link" href="report.html">Report Emergency</a>
           </li>
           <li class="nav-item">
-            <a class="logged-in nav-link hide-link" href="reporthistory.html">Report history</a>
+            <a class="logged-in nav-link hide-link" href="reporthistory.html">View Report History</a>
           </li>
           <li class="nav-item">
             <a class="logged-in nav-link hide-link" href="account.html">Account</a>
@@ -77,11 +77,12 @@
     <div id="emergency-description-container" class="form-group">
       <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
       <textarea name="description" id="emergency-description" rows="5" cols="35"
-        placeholder="Input your emergency here!" required></textarea>
+        placeholder="Describe emergency here." required></textarea>
     </div>
   
     <div id="phone-number-container" class="form-group">
       <label for="phone-number" class="form-control-heading">Phone number:</label>
+      <div><small>Format: xxx-xxx-xxxx</small></div>
       <input type="text" name="phoneNumber" id="phone-number" pattern="^\d{3}-\d{3}-\d{4}$"
         title="Required phone number format: xxx-xxx-xxxx" placeholder="xxx-xxx-xxxx" required>
     </div>
@@ -120,7 +121,9 @@
         Security</label>
         <input type="checkbox" name="location" id="location-checkbox" class="checkbox" />
     </div>
-    <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
+    <div id="button-container">
+      <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
+    </div>
   </form>
 </div>
 
@@ -206,7 +209,7 @@
     <script src="./scripts/authentication.js"></script>
     <script src="./scripts/rendernavbarlinks.js"></script>
     <script src="./scripts/report.js"></script>
-  </div>
+  <!-- </div> -->
 </body>
 
 </html>

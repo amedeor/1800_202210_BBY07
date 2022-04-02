@@ -1,7 +1,7 @@
-/* body {
-  background-color: #dbe9ee;
-
-} */
+body {
+  /* background-color: #dbe9ee; */
+  margin-bottom: 8em; /*Required for Bootstrap sticky footer*/
+}
 
 /* blue #BBDEFB */
 /* dark body #dbe9ee */

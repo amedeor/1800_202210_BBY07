@@ -1,5 +1,5 @@
 function createMap(latitude, longitude, mapContainerElementId) {
-  let map = L.map(`${mapContainerElementId}`).setView([latitude, longitude], 15);
+  let map = L.map(`${mapContainerElementId}`, {gestureHandling: true}).setView([latitude, longitude], 15);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -25,16 +25,16 @@ const olympicParalymicCoords = { latitude: 49.2434708, longitude: -123.1094403 }
 const creeksideCoords = { latitude: 50.0911199, longitude: -122.9809555 };
 const blackcombCoords = { latitude: 50.0951035, longitude: -122.9022308 };
 
-let mapContainers = document.querySelectorAll(".map-container");
-
-let richmondOvalMap = createMap(richmondOvalCoords.latitude, richmondOvalCoords.longitude, "richmond-oval"); //we need to get the attribute of the id of the element where the map will be inserted into
-let cypressMountainMap = createMap(cypressMountainCoords.latitude, cypressMountainCoords.longitude, "cypress"); //we need to get the attribute of the id of the element where the map will be inserted into
+let richmondOvalMap = createMap(richmondOvalCoords.latitude, richmondOvalCoords.longitude, "richmond-oval"); 
+let cypressMountainMap = createMap(cypressMountainCoords.latitude, cypressMountainCoords.longitude, "cypress"); 
 let pneMap = createMap(pneCoords.latitude, pneCoords.longitude, "pne");
 let rogersArenaMap = createMap(rogersArenaCoords.latitude, rogersArenaCoords.longitude, "rogers-arena");
 let ubcMap = createMap(ubcCoords.latitude, ubcCoords.longitude, "ubc-winter-sports");
 let olympicParalympicMap = createMap(olympicParalymicCoords.latitude, olympicParalymicCoords.longitude, "olympic-paralympic-centre");
 let creeksideMap = createMap(creeksideCoords.latitude, creeksideCoords.longitude, "creekside");
 let blackcombMap = createMap(blackcombCoords.latitude, blackcombCoords.longitude, "blackcomb");
+
+let mapContainers = document.querySelectorAll(".map-container");
 
 mapContainers.forEach(mapContainer => {
   console.log(mapContainer);
@@ -51,6 +51,7 @@ mapContainers.forEach(mapContainer => {
   });
 });
 
+
 let logoLink = document.querySelector("#logo-link");
 
 //if a user is not logged in and they click on the navbar logo, direct them to login.html
@@ -58,7 +59,7 @@ let logoLink = document.querySelector("#logo-link");
 logoLink.addEventListener("click", e => {
   auth.onAuthStateChanged(user => {
     if (!user) {
-      window.location = "login.html";
+      window.location = "index.html";
     }
     else if (user) {
       window.location = "main.html"
