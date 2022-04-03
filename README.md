@@ -69,4 +69,4 @@ It has the following subfolders and files:
 ## Acknowledgements
 * <a href="https://www.mapbox.com/">Mapbox</a>
 * <a href="https://leafletjs.com/">Leaflet</a>
-* <a href="https://getbootstrap.com>Bootstrap</a>
+* <a href="https://getbootstrap.com">Bootstrap</a>
