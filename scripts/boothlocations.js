@@ -1,5 +1,5 @@
 function createMap(latitude, longitude, mapContainerElementId) {
-  let map = L.map(`${mapContainerElementId}`, {gestureHandling: true}).setView([latitude, longitude], 15);
+  let map = L.map(`${mapContainerElementId}`, { gestureHandling: true }).setView([latitude, longitude], 15);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -14,43 +14,76 @@ function createMap(latitude, longitude, mapContainerElementId) {
   return map;
 }
 
-//map coordinates
-const richmondOvalCoords = { latitude: 49.1740067, longitude: -123.1533034 };
-console.log(richmondOvalCoords.latitude);
-const cypressMountainCoords = { latitude: 49.3957428, longitude: -123.2052326 };
-const pneCoords = { latitude: 49.2822281, longitude: -123.0442549 };
-const rogersArenaCoords = { latitude: 49.2778355, longitude: -123.1175775 };
-const ubcCoords = { latitude: 49.2585025, longitude: -123.2441084 };
-const olympicParalymicCoords = { latitude: 49.2434708, longitude: -123.1094403 };
-const creeksideCoords = { latitude: 50.0911199, longitude: -122.9809555 };
-const blackcombCoords = { latitude: 50.0951035, longitude: -122.9022308 };
+function populateSecurityBoothLocations() {
 
-let richmondOvalMap = createMap(richmondOvalCoords.latitude, richmondOvalCoords.longitude, "richmond-oval"); 
-let cypressMountainMap = createMap(cypressMountainCoords.latitude, cypressMountainCoords.longitude, "cypress"); 
-let pneMap = createMap(pneCoords.latitude, pneCoords.longitude, "pne");
-let rogersArenaMap = createMap(rogersArenaCoords.latitude, rogersArenaCoords.longitude, "rogers-arena");
-let ubcMap = createMap(ubcCoords.latitude, ubcCoords.longitude, "ubc-winter-sports");
-let olympicParalympicMap = createMap(olympicParalymicCoords.latitude, olympicParalymicCoords.longitude, "olympic-paralympic-centre");
-let creeksideMap = createMap(creeksideCoords.latitude, creeksideCoords.longitude, "creekside");
-let blackcombMap = createMap(blackcombCoords.latitude, blackcombCoords.longitude, "blackcomb");
+  let securityBoothLocationsCollection = db.collection("securityboothlocations").orderBy("name", "asc");
 
-let mapContainers = document.querySelectorAll(".map-container");
+  let securityBoothLocationNumber = 1;
 
-mapContainers.forEach(mapContainer => {
-  console.log(mapContainer);
-  mapContainer.addEventListener("shown.bs.collapse", e => {
-    console.log("invalidateSize called");
-    richmondOvalMap.invalidateSize();
-    cypressMountainMap.invalidateSize();
-    pneMap.invalidateSize();
-    rogersArenaMap.invalidateSize();
-    ubcMap.invalidateSize();
-    olympicParalympicMap.invalidateSize();
-    creeksideMap.invalidateSize();
-    blackcombMap.invalidateSize();
-  });
-});
+  let securityBoothLocationsContainer = document.createElement("div");
+  securityBoothLocationsContainer.setAttribute("id", "maps-container-div");
+  securityBoothLocationsContainer.setAttribute("class", "container");
 
+  securityBoothLocationsCollection.get()
+    .then(allBoothLocations => {
+      allBoothLocations.forEach(doc => {
+
+        let clickOnLocationMessage = document.querySelector("#click-on-location-message");
+
+        clickOnLocationMessage.insertAdjacentElement("afterend", securityBoothLocationsContainer);
+
+        let map;
+
+        //Create elements
+        let singleLocationContainer = document.createElement("div");
+        let a = document.createElement("a"); //the link that is created will be the name of the security booth location (e.g., Rogers Arena)
+
+        //Set up Bootstrap toggle
+        singleLocationContainer.setAttribute("id", `location${securityBoothLocationNumber}`);
+        singleLocationContainer.setAttribute("class", "collapse card");
+        a.setAttribute("id", "booth-location-link")
+        a.setAttribute("href", `#location${securityBoothLocationNumber}`);
+        a.setAttribute("data-bs-toggle", "collapse");
+
+        //Append elements
+        securityBoothLocationsContainer.insertAdjacentElement("beforeend", a);
+        securityBoothLocationsContainer.insertAdjacentElement("beforeend", singleLocationContainer);
+
+        //Insert the name of the security booth location as the text for the link
+        a.insertAdjacentText("afterbegin", `${doc.data().name}`);
+
+        let mapContainer = document.createElement("div");
+        mapContainer.setAttribute("id", `map${securityBoothLocationNumber}`);
+        //used to set the width of the map so that it is displayed on the HTML page, width value is mandatory for rendering
+        mapContainer.setAttribute("class", "map-style color");
+
+        let mapTitle = document.createElement("p");
+        mapTitle.setAttribute("class", "map-title");
+        mapTitle.insertAdjacentText("afterbegin", doc.data().name);
+        singleLocationContainer.insertAdjacentElement("beforeend", mapTitle);
+        singleLocationContainer.insertAdjacentElement("beforeend", mapContainer); //add the map container element to the DOM before calling L.map()
+
+        //Get latitude and longitude from each map location
+        latitude = doc.data().coordinates.latitude;
+        longitude = doc.data().coordinates.longitude;
+
+        //Get the attribute of the id of the element where the map will be inserted into
+        map = createMap(latitude, longitude, mapContainer.getAttribute("id"));
+
+        //Add an event listener to the Bootstrap collapse event
+        //When the collapse event is fired, invalidate the resize so that the map renders full width in the Bootstrap card
+        singleLocationContainer.addEventListener("shown.bs.collapse", e => {
+          map.invalidateSize();
+        });
+        securityBoothLocationNumber++;
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
+
+populateSecurityBoothLocations();
 
 let logoLink = document.querySelector("#logo-link");
 
@@ -65,4 +98,4 @@ logoLink.addEventListener("click", e => {
       window.location = "main.html"
     }
   });
-})
+});

@@ -28,7 +28,9 @@
   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
 
   <!-- leaflet-gesture-handling -->
-  <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.css" type="text/css">
+  <link rel="stylesheet"
+    href="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.css"
+    type="text/css">
   <script src="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.js"></script>
 </head>
 
@@ -76,75 +78,9 @@
   </nav>
 
   <div class="container">
-    <div id="map-elements-container" class="px-4 my-5 text-center">
-
+    <div class=" my-5 text-center">
       <h1 class="display-5" id="security-booth-heading">Security Booth Locations</h1>
-
-      <p>Click on location to view map:</p>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Cypress">Cypress Mountain</a>
-      <div class="collapse  map-container" id="Cypress">
-        <div class="card card-body">
-          <p>Cypress Mountain (Provincial Park)</p>
-          <div id="cypress" class="map-style"></div>
-        </div>
-      </div>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#PNE">Pacific National Exhibition</a>
-      <div class="collapse map-container" id="PNE">
-        <div class="card card-body">
-          <p>PNE Pacific Coliseum</p>
-          <div id="pne" class="map-style"></div>
-        </div>
-      </div>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RichmondOval">Richmond Oval</a>
-      <div class="collapse map-container" id="RichmondOval">
-        <div class="card card-body">
-          <p>Richmond Oval</p>
-          <div id="richmond-oval" class="map-style"></div>
-        </div>
-      </div>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#RogersArena">Rogers Arena</a>
-      <div class="collapse map-container" id="RogersArena">
-        <div class="card card-body">
-          <p>Rogers Arena</p>
-          <div id="rogers-arena" class="map-style"></div>
-        </div>
-      </div>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#UBC">University of British Columbia</a>
-      <div class="collapse map-container" id="UBC">
-        <div class="card card-body">
-          <p>UBC Winter Sports Centre</p>
-          <div id="ubc-winter-sports" class="map-style"></div>
-        </div>
-      </div>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Vancouver">Vancouver Olympic/Paralympic
-        Centre</a>
-      <div class="collapse map-container" id="Vancouver">
-        <div class="card card-body">
-          <p>Vancouver Olympic/Paralympic Centre</p>
-          <div id="olympic-paralympic-centre" class="map-style"></div>
-        </div>
-      </div>
-
-      <a class="collapse-card boothMenu" data-bs-toggle="collapse" href="#Whistler">Whistler Mountain</a>
-      <div class="collapse map-container" id="Whistler">
-        <h3 class="display-6">Whistler Creekside</h3>
-        <div class="card card-body">
-          <p>Whistler Mountain (Creekside)</p>
-          <div id="creekside" class="map-style"></div>
-        </div>
-        <h3 class="display-6 blackcomb-heading">Blackcomb Mountain</h3>
-        <div class="card card-body map-container">
-          <p>Whistler Mountain (Blackcomb)</p>
-          <div id="blackcomb" class="map-style"></div>
-        </div>
-      </div>
-
+      <p id="click-on-location-message">Click on location to view map:</p>
     </div>
   </div>
 

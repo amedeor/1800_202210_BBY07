@@ -71,18 +71,18 @@ deleteFilesButton.addEventListener("click", e => {
 function deleteFileUploadFolderInFirestore() {
   //create a reference to the unique storage folder for the report
   let storageReference = firebase.storage().ref(`/users/${auth.currentUser.uid}/${uniqueStorageFolderId}`);
-  
+
   //delete the folder containing all uploaded files by deleting each file in the folder
   //Firebase doesn't not support deleting storage folders directly
   storageReference.listAll()
     .then(allItemsInFolder => {
       allItemsInFolder.items.forEach(file => {
         file.delete()
-      })
+      });
     })
     .catch(error => {
       console.log(error);
-    })
+    });
 }
 
 async function uploadFileToFirestore() {
@@ -130,11 +130,9 @@ emergencyReportForm.addEventListener("submit", e => {
 
   const signedInUser = auth.currentUser;
   const signedInUserId = signedInUser.uid;
-  console.log(signedInUserId);
 
   //go to the correct user document by referencing to the user's uid
   const userDocument = db.collection("users").doc(signedInUserId);
-  console.log(userDocument);
 
   //get the reports collection of the current user
   const reports = userDocument.collection("reports");
@@ -147,7 +145,6 @@ emergencyReportForm.addEventListener("submit", e => {
     userLocation = new firebase.firestore.GeoPoint(0, 0);
   } else {
     userLocation = new firebase.firestore.GeoPoint(latitude, longitude);
-    console.log(userLocation.latitude, userLocation.longitude);
   }
 
   const timestamp = new firebase.firestore.Timestamp.now();
@@ -184,4 +181,4 @@ logoLink.addEventListener("click", e => {
       window.location = "main.html"
     }
   });
-})
+});

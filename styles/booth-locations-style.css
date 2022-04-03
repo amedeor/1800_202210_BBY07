@@ -5,6 +5,24 @@
   margin-bottom: 1em;
 }
 
+.card {
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+#booth-location-link {
+  display: block;
+  font-size: 16pt;
+  padding-bottom: 1em;
+}
+
+.map-title {
+  font-weight: 400;
+  font-size: 14pt;
+  font-weight: bold;
+  padding: 0;
+}
+
 .map-container {
   padding-bottom: 2em;
 }
@@ -25,9 +43,6 @@
 #security-booth-heading {
   padding-bottom: .5em;
 }
-
-/* blue #BBDEFB */
-/* dark body #dbe9ee */
 
 .none-display {
   display: none;
@@ -53,12 +68,6 @@
 #contact-security-button:hover {
   color: #fff;
 }
-
-/* This rule causes a problem when the hamburger menu is rendered */
-/* #signout {
-  text-align: right;
-  margin-right: 50px;
-} */
 
 .display-6 {
   font-size: 25px;

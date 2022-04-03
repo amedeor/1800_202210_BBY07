@@ -1,10 +1,6 @@
 body {
-  /* background-color: #dbe9ee; */
   margin-bottom: 8em; /*Required for Bootstrap sticky footer*/
 }
-
-/* blue #BBDEFB */
-/* dark body #dbe9ee */
 
 .none-display {
   display: none;
@@ -30,12 +26,6 @@ body {
 #contact-security-button:hover {
   color: #fff;
 }
-
-/* This rule causes a problem when the hamburger menu is rendered */
-/* #signout {
-  text-align: right;
-  margin-right: 50px;
-} */
 
 .display-6 {
   font-size: 25px;

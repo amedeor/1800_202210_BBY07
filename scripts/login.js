@@ -11,4 +11,4 @@ logoLink.addEventListener("click", e => {
       window.location = "main.html"
     }
   });
-})
+});

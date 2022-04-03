@@ -5,7 +5,7 @@ auth.onAuthStateChanged(user => {
 });
 
 function createMap(latitude, longitude, mapContainerElementId) {
-  let map = L.map(`${mapContainerElementId}`, {gestureHandling: true}).setView([latitude, longitude], 13);
+  let map = L.map(`${mapContainerElementId}`, { gestureHandling: true }).setView([latitude, longitude], 13);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -27,11 +27,10 @@ function populateReportHistory() {
 
       //check if a reports collection exists
       db.collection("users").doc(user.uid).collection("reports").limit(1).get().then(results => {
-        console.log(results.size);
         let reportsMessage = document.createElement("p");
         reportsMessage.setAttribute("id", "reports-message");
         let reportHistoryHeading = document.querySelector("#report-history-heading");
-  
+
         if (results.size > 0) {
           reportsMessage.insertAdjacentText("beforeend", "Click on a date to view a report");
           reportHistoryHeading.insertAdjacentElement("afterend", reportsMessage);
@@ -50,10 +49,6 @@ function populateReportHistory() {
       reportsCollection.get()
         .then(allReports => {
           allReports.forEach(doc => {
-
-            //Get elements
-            //let reportHistoryHeading = document.querySelector("#report-history-heading");
-
             let reportsMessage = document.querySelector("#reports-message");
 
             //Create elements
@@ -107,8 +102,6 @@ function populateReportHistory() {
             //used to set the width of the map so that it is displayed on the HTML page, width value is mandatory for rendering
             mapContainer.setAttribute("class", "map-style");
 
-            console.log(mapContainer.getAttribute("id"));
-
             singleReportContainer.insertAdjacentElement("beforeend", timeStampHeading);
             singleReportContainer.insertAdjacentElement("beforeend", severityHeading);
             singleReportContainer.insertAdjacentElement("beforeend", descriptionHeading);
@@ -137,9 +130,6 @@ function populateReportHistory() {
             phoneNumberHeading.setAttribute("class", "data-heading");
             fileURLHeading.setAttribute("class", "data-heading");
 
-            console.log(jsDateObject);
-            console.log(formattedDate);
-
             timestampParagraph.insertAdjacentText("beforeend", dateAndTime);
 
             let map;
@@ -147,7 +137,8 @@ function populateReportHistory() {
             if (doc.data().locationGeoPoint !== undefined) {
               if (latitude !== 0 && longitude !== 0) {
                 locationGeoPointParagraph.insertAdjacentText("beforeend", `latitude: ${latitude} longitude: ${longitude}`);
-                map = createMap(latitude, longitude, mapContainer.getAttribute("id")); //we need to get the attribute of the id of the element where the map will be inserted into
+                //get the attribute of the id of the element where the map will be inserted into
+                map = createMap(latitude, longitude, mapContainer.getAttribute("id"));
               } else {
                 locationGeoPointParagraph.insertAdjacentText("beforeend", "No location data available");
               }
@@ -157,7 +148,6 @@ function populateReportHistory() {
             //When the collapse event is fired, invalidate the resize so that the map renders full width in the Bootstrap card
             singleReportContainer.addEventListener("shown.bs.collapse", e => {
               if (latitude !== 0 && longitude !== 0) {
-                console.log("invalidateSize called");
                 map.invalidateSize();
               } else {
                 //remove the mapContainer's map-style class if there is no location data so a large blank map does not get rendered
@@ -180,7 +170,6 @@ function populateReportHistory() {
               let keys = Object.keys(doc.data().fileURLs);
 
               let numberOfKeys = keys.length;
-              //console.log(`OBJECT KEYS: ${Object.keys(doc.data().fileURLs)}`);
 
               //Iterate through the array of objects
               //and print each file URL
@@ -191,12 +180,6 @@ function populateReportHistory() {
                 fileURLLink.setAttribute("href", doc.data().fileURLs[i]);
                 fileURLLink.setAttribute("target", "_blank");
                 singleReportContainer.insertAdjacentElement("beforeend", fileURLLink);
-
-                // let fileURLParagraph = document.createElement("p");
-                // fileURLParagraph.setAttribute("id", `file-url-${i}`);
-                // fileURLParagraph.insertAdjacentText("beforeend", doc.data().fileURLs[i]);
-                // singleReportContainer.insertAdjacentElement("beforeend", fileURLParagraph);
-
               }
             } else if (doc.data().fileURLs.length === 0) {
               let fileURLParagraph = document.createElement("p");
@@ -227,6 +210,6 @@ logoLink.addEventListener("click", e => {
       window.location = "main.html"
     }
   });
-})
+});
 
 

@@ -21,7 +21,7 @@ function populateAccountInfo() {
           emailInput.setAttribute("value", userEmail)
         });
     }
-  })
+  });
 }
 
 populateAccountInfo();
@@ -42,11 +42,10 @@ function saveUserInfo() {
 
   userInfo.update({
     name: userName,
-    //email: userEmail
   })
-  .then(() => {
-    console.log("Document successfully updated!");
-  })
+    .then(() => {
+      console.log("Document successfully updated!");
+    });
 
   document.getElementById('account-information-fields').disabled = true;
 }
@@ -64,7 +63,7 @@ logoLink.addEventListener("click", e => {
       window.location = "main.html"
     }
   });
-})
+});
 
 function getUserInfo() {
   console.log(displayName2);

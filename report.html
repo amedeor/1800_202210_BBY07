@@ -72,60 +72,60 @@
 
   <h1 id="report-emergency-heading" class="display-5 text-center">Report Emergency</h1>
 
-<div id="form-container" class="container ">
-  <form id="emergency-report-form" class="">
-    <div id="emergency-description-container" class="form-group">
-      <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
-      <textarea name="description" id="emergency-description" rows="5" cols="35"
-        placeholder="Describe emergency here." required></textarea>
-    </div>
-  
-    <div id="phone-number-container" class="form-group">
-      <label for="phone-number" class="form-control-heading">Phone number:</label>
-      <div><small>Format: xxx-xxx-xxxx</small></div>
-      <input type="text" name="phoneNumber" id="phone-number" pattern="^\d{3}-\d{3}-\d{4}$"
-        title="Required phone number format: xxx-xxx-xxxx" placeholder="xxx-xxx-xxxx" required>
-    </div>
-  
-    <div id="file-upload-container" class="form-group">
-      <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
-      <input type="file" name="fileUpload" id="file-upload" multiple="multiple" />
-    </div>
-  
-    <div id="radio-buttons-container" class="form-group">
-      <p class="form-control-heading">Severity of emergency:</p>
-  
-      <div id="radio-buttons-inner-container" class="form-group">
-
-        <div id="low-button-container">
-          <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="Low" required>
-          <label class="severity" for="low" id="low-label">Low</label>
-        </div>
-
-        <div id="medium-button-container">
-          <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="Medium">
-          <label class="severity" for="low" id="medium-label">Medium</label>
-        </div>
-
-        <div id="high-button-container">
-          <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="High">
-          <label class="severity" for="low" id="high-label">High</label>
-        </div>
-
+  <div id="form-container" class="container ">
+    <form id="emergency-report-form" class="">
+      <div id="emergency-description-container" class="form-group">
+        <label for="emergency-description" class="form-control-heading">Description of emergency:</label>
+        <textarea name="description" id="emergency-description" rows="5" cols="35"
+          placeholder="Describe emergency here." required></textarea>
       </div>
-    </div>
-  
-    <div id="send-location-container" class="form-group">
-      
-      <label id="send-location-label" for="location" class="form-control-heading">Send my location to
-        Security</label>
+
+      <div id="phone-number-container" class="form-group">
+        <label for="phone-number" class="form-control-heading">Phone number:</label>
+        <div><small>Format: xxx-xxx-xxxx</small></div>
+        <input type="text" name="phoneNumber" id="phone-number" pattern="^\d{3}-\d{3}-\d{4}$"
+          title="Required phone number format: xxx-xxx-xxxx" placeholder="xxx-xxx-xxxx" required>
+      </div>
+
+      <div id="file-upload-container" class="form-group">
+        <label for="file-upload" class="form-control-heading">Attach photos/videos:</label>
+        <input type="file" name="fileUpload" id="file-upload" multiple="multiple" />
+      </div>
+
+      <div id="radio-buttons-container" class="form-group">
+        <p class="form-control-heading">Severity of emergency:</p>
+
+        <div id="radio-buttons-inner-container" class="form-group">
+
+          <div id="low-button-container">
+            <input type="radio" id="low-radio-button" class="radio-button" name="severity" value="Low" required>
+            <label class="severity" for="low" id="low-label">Low</label>
+          </div>
+
+          <div id="medium-button-container">
+            <input type="radio" id="medium-radio-button" class="radio-button" name="severity" value="Medium">
+            <label class="severity" for="low" id="medium-label">Medium</label>
+          </div>
+
+          <div id="high-button-container">
+            <input type="radio" id="high-radio-button" class="radio-button" name="severity" value="High">
+            <label class="severity" for="low" id="high-label">High</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="send-location-container" class="form-group">
+
+        <label id="send-location-label" for="location" class="form-control-heading">Send my location to
+          Security</label>
         <input type="checkbox" name="location" id="location-checkbox" class="checkbox" />
-    </div>
-    <div id="button-container">
-      <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
-    </div>
-  </form>
-</div>
+      </div>
+      <div id="button-container">
+        <input id="submit-button" class="btn-primary btn-lg" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
 
 
   <!-- <div class="container">
@@ -186,29 +186,29 @@
       </form>
     </div> -->
 
-    <!-- Footer -->
-    <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
-    <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-primary justify-content-center py-3">
-      <div class="container justify-content-center">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="about.html">About</a>
-          <a class="nav-link" href="questions.html">FAQ</a>
-          <a class="nav-link" href="help.html">Help</a>
-        </div>
+  <!-- Footer -->
+  <!-- navbar-expand to prevent stacking of navbar icons when window size is small -->
+  <footer class="navbar flex-row fixed-bottom navbar-expand navbar-light bg-primary justify-content-center py-3">
+    <div class="container justify-content-center">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="about.html">About</a>
+        <a class="nav-link" href="questions.html">FAQ</a>
+        <a class="nav-link" href="help.html">Help</a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
-    <!-- Boostrap Library JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
+  <!-- Boostrap Library JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
-    <!-- JavaScript Functions -->
-    <script src="./scripts/firebaseAPI.js"></script>
-    <script src="./scripts/authentication.js"></script>
-    <script src="./scripts/rendernavbarlinks.js"></script>
-    <script src="./scripts/report.js"></script>
+  <!-- JavaScript Functions -->
+  <script src="./scripts/firebaseAPI.js"></script>
+  <script src="./scripts/authentication.js"></script>
+  <script src="./scripts/rendernavbarlinks.js"></script>
+  <script src="./scripts/report.js"></script>
   <!-- </div> -->
 </body>
 
