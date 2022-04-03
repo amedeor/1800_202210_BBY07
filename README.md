@@ -21,6 +21,7 @@ Technologies used for this project:
 ## Content
 Content of the project folder:
 
+```
  Top level of project folder: 
 ├── .gitignore                    # Git ignore file
 ├── about.html                    # About HTML file, the page containing information about our mission and application
@@ -61,6 +62,7 @@ It has the following subfolders and files:
     /report-history-style.css     # Styles for reporthistory.html
     /report-style.css             # Styles for report.html
     /style.css                    # Site wide styles
+```
 
 ## Contact
 * Amedeo, Izabelle, or Patrick at comp1800team07@gmail.com
