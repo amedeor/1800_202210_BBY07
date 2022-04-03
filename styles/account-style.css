@@ -6,3 +6,9 @@
 #email {
   text-align: center;
 }
+
+.form-control {
+  display: inline;
+  width: auto;
+  margin: auto;
+}
