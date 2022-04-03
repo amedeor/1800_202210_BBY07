@@ -1,8 +1,10 @@
 ## iAssist - Helping Make Events Safer
 
-* [General info](#general-info)
+* [General Info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
 ## General Info
 iAssist is a web application developed by BBY Team 07 to enhance the safety of everyone involved with the Olympics by providing a simple method to report suspicious activities and emergencies to security personnel.
@@ -18,7 +20,7 @@ Technologies used for this project:
 * Leaflet
 * Mapbox
 
-## Content
+## Contents
 Content of the project folder:
 
 ```
