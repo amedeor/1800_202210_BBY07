@@ -67,6 +67,6 @@ It has the following subfolders and files:
 * Amedeo, Izabelle, or Patrick at comp1800team07@gmail.com
 
 ## Acknowledgements
-* <a href="https://www.mapbox.com/">Mapbox</a>
-* <a href="https://leafletjs.com/">Leaflet</a>
-* <a href="https://getbootstrap.com">Bootstrap</a>
+* [Mapbox]"https://www.mapbox.com/"
+* [Leaflet]"https://leafletjs.com/"
+* [Bootstrap]"https://getbootstrap.com"
