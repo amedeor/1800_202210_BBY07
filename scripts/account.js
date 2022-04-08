@@ -37,6 +37,7 @@ function editUserInfo() {
 }
 
 function saveUserInfo() {
+  // Stores the values in the provided form in the database for the specific user
   userEmail = document.getElementById("email").value;
   userName = document.getElementById("name").value;
 
