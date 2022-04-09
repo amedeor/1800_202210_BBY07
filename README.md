@@ -36,6 +36,7 @@ Content of the project folder:
 ├── questions.html                # FAQ HTML file, the page that contains answers to frequently asked questions about the application
 ├── report.html                   # Report HTML file, the page that allows a user to report an emergency
 ├── reporthistory.html            # Report history HTML file, the page that allows a user to view all their submitted reports
+├── signout.html                  # Signout HTML file
 └── README.md                     # Readme file that contains information about the project
 
 It has the following subfolders and files:
@@ -45,18 +46,18 @@ It has the following subfolders and files:
     /alert-app-icon.svg
 
 ├── scripts                       # Folder for scripts
-    /about.js                     # JavaScript for about.js
-    /account.js                   # JavaScript for account.js
+    /about.js                     # JavaScript for about.html
+    /account.js                   # JavaScript for account.html
     /authentication.js            # JavaScript for authentication tasks
     /boothlocations.js            # JavaScript for boothlocations.html
-    /help.js                      # JavaScript for help.js
-    /index.js                     # JavaScript for index.js
-    /login.js                     # JavaScript for login.js
-    /main.js                      # JavaScript for main.js
-    /questions.js                 # JavaScript for questions.js
+    /help.js                      # JavaScript for help.html
+    /index.js                     # JavaScript for index.html
+    /login.js                     # JavaScript for login.html
+    /main.js                      # JavaScript for main.html
+    /questions.js                 # JavaScript for questions.html
     /rendernavbarlinks.js         # JavaScript to change navbar links if a user is logged in
-    /report.js                    # JavaScript for report.js
-    /reporthistory.js             # JavaScript for reporthistory.js
+    /report.js                    # JavaScript for report.html
+    /reporthistory.js             # JavaScript for reporthistory.html
 
 ├── styles                        # Folder for CSS styles
     /account-style.css            # Styles for account.html
