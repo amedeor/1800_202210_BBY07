@@ -4,6 +4,11 @@ auth.onAuthStateChanged(user => {
   }
 });
 
+//Creates a map
+//latitude - the latitude of the coordinate
+//longitude - the longitude of the coordinate
+//mapContainerElementId - the ID of the element that will be the parent element of the map
+//returns a map object
 function createMap(latitude, longitude, mapContainerElementId) {
   let map = L.map(`${mapContainerElementId}`, { gestureHandling: true }).setView([latitude, longitude], 13);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
@@ -20,6 +25,7 @@ function createMap(latitude, longitude, mapContainerElementId) {
   return map;
 }
 
+//Populates the reporthistory.html page with a user's reports
 function populateReportHistory() {
   auth.onAuthStateChanged(user => {
     if (user) {
@@ -161,12 +167,12 @@ function populateReportHistory() {
 
             phoneNumberParagraph.insertAdjacentText("beforeend", doc.data().phoneNumber);
 
-            //check if any pictures were uploaded
+            //Check if any pictures were uploaded
             //if no pictures were uploaded, doc.data().fileURLs is undefined because
             //no array was created for the report in the reports collection
             if (doc.data().fileURLs.length > 0) {
 
-              //get the keys for each key-value pair in the fileURLs
+              //Get the keys for each key-value pair in the fileURLs
               let keys = Object.keys(doc.data().fileURLs);
 
               let numberOfKeys = keys.length;
@@ -199,8 +205,8 @@ populateReportHistory();
 
 let logoLink = document.querySelector("#logo-link");
 
-//if a user is not logged in and they click on the navbar logo, direct them to login.html
-//if a user is logged in and they click on the navbar logo, direct them to main.html
+//If a user is not logged in and they click on the navbar logo, direct them to login.html
+//If a user is logged in and they click on the navbar logo, direct them to main.html
 logoLink.addEventListener("click", e => {
   auth.onAuthStateChanged(user => {
     if (!user) {

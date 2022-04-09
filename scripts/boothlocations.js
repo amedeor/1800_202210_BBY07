@@ -1,3 +1,8 @@
+//Creates a map
+//latitude - the latitude of the coordinate
+//longitude - the longitude of the coordinate
+//mapContainerElementId - the ID of the element that will be the parent element of the map
+//returns a map object
 function createMap(latitude, longitude, mapContainerElementId) {
   let map = L.map(`${mapContainerElementId}`, { gestureHandling: true }).setView([latitude, longitude], 15);
   let marker = L.marker([latitude, longitude]).addTo(map); //map is the name of the variable that we created at the beginning of the function, marker is added to map
@@ -14,6 +19,7 @@ function createMap(latitude, longitude, mapContainerElementId) {
   return map;
 }
 
+//Populates the page with cards containing the maps of each security booth location
 function populateSecurityBoothLocations() {
 
   let securityBoothLocationsCollection = db.collection("securityboothlocations").orderBy("name", "asc");

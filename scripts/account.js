@@ -4,6 +4,7 @@ auth.onAuthStateChanged(user => {
   }
 });
 
+//Populates the user's account information
 function populateAccountInfo() {
   auth.onAuthStateChanged(user => {
     if (user) {
@@ -32,10 +33,12 @@ const save = document.getElementById("save");
 edit.addEventListener("click", editUserInfo);
 save.addEventListener("click", saveUserInfo);
 
+//Allows the user's account information to be editable
 function editUserInfo() {
   document.getElementById("account-information-fields").disabled = false;
 }
 
+//Allows a user to save changes made to their account information
 function saveUserInfo() {
   // Stores the values in the provided form in the database for the specific user
   userEmail = document.getElementById("email").value;
@@ -66,6 +69,7 @@ logoLink.addEventListener("click", e => {
   });
 });
 
+//Retrieves a user's account information
 function getUserInfo() {
   console.log(displayName2);
   console.log(email2);

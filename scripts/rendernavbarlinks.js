@@ -2,6 +2,8 @@ let loggedOutLinks = document.querySelectorAll(".logged-out");
 let loggedInLinks = document.querySelectorAll(".logged-in");
 let loggedInLinksLoggedOutLinks = document.querySelectorAll(".logged-in-logged-out")
 
+//Renders the correct navbar links depending on whether a user is logged in or not
+//user - the current user
 function renderNavBarLinks(user) {
   //if user is logged in, show the logged-in links
   if (user) {

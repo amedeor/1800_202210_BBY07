@@ -1,3 +1,4 @@
+//Retrieves the user's name from the database and inserts it on the page
 function insertName() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
